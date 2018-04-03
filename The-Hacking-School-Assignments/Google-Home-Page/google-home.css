@@ -1,0 +1,161 @@
+/* ------- Nav Items ------- */
+
+ul {
+    list-style: none;
+    padding: 0px;
+    line-height: 0px;
+}
+
+li {
+    display: inline-block;
+    padding: 5px 7px;
+    vertical-align: middle;
+}
+
+nav, footer {
+    padding: 4px 20px;
+}
+
+/* ------- Top Nav ------- */
+
+nav img {
+    list-style: none;
+    color: #000;
+    opacity: 0.85;
+}
+
+nav a {
+    text-decoration: none;
+    color: #000;
+    opacity: 0.75;
+}
+
+nav ul li a:hover {
+    text-decoration-line: underline;
+    opacity: 0.65;
+}
+
+/* ------- Left Nav Items ------- */
+
+.l_nav {
+    float: left;
+    padding-top: 10px;
+}
+
+/* ------- Right Nav Items ------- */
+
+.r_nav {
+    float: right;
+    position: relative;
+    padding-top: 0px;
+    padding-right: 8px;
+}
+.apps {
+    width: 16px;
+    height: 16px;
+    margin-top: -2px;
+    padding-right: 9px;
+    opacity: 0.75;
+}
+
+.apps:hover {
+    opacity: 1;
+}
+
+/* ------- Sign In Button ------- */
+
+.sign_in {
+    border: 1px solid #4285f4;
+    outline: none;
+    background: #4285f4;
+    display: inline-block;
+    line-height: 28px;
+    padding: 0 12px;
+    border-radius: 2px;
+}
+
+.sign_in a {
+    font-weight: bold;
+    color: #fff;
+    opacity: 1;
+    text-decoration: none;
+}
+
+.sign_in a:hover {
+    opacity: 1;
+    text-decoration: none;
+}
+
+.sign_in:hover {
+    opacity: 1;
+    box-shadow: 0 1.5px 0 0 #e4e4e4;
+}
+
+
+.container {
+    text-align:center;
+    width:100%;
+    height:auto;
+    padding-top:130px;
+    margin:0 auto;
+}
+
+.search-form {
+
+    width: 700px;
+    height: 45px;
+    top: 10px;
+    background-image: url(mic.jpg);
+    font-family: arial;
+    font-size: 20px;
+    outline: none;
+    display: block;
+    margin : 0 auto;
+}
+
+.resizedTextbox {width: 700px; height: 45spx}
+
+.google-logo {
+    width:700px;
+    outline: none;
+    display: block;
+    margin-left: 630px;
+}
+
+input {
+    width:400px;
+    height:30px;
+    margin-bottom:15px;
+}
+
+.mic {
+    width: 14px;
+    height: 20px;
+    position: relative;
+    left: 335px;
+    top: 28px;
+}
+
+.footer-left{
+    float:left;
+}
+.footer-right{
+    float:right;
+}
+
+.footer a{
+    color:#757575;
+    padding:5px;
+    font-size:10pt;
+}
+
+.footer {
+    background:#f2f2f2;
+    font-family:arial;
+    font-color:#757575;
+    padding:5px;
+    bottom:0;
+    position:fixed;
+    width:100%;
+    left:-5px;
+}
