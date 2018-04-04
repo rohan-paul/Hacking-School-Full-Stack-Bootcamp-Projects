@@ -101,25 +101,22 @@ nav ul li a:hover {
 }
 
 .search-form {
-
     width: 700px;
     height: 45px;
     top: 10px;
-    background-image: url(mic.jpg);
+    /*background-image: url(mic.jpg);*/
     font-family: arial;
     font-size: 20px;
     outline: none;
-    display: block;
+    /*display: block;*/
     margin : 0 auto;
 }
 
-.resizedTextbox {width: 700px; height: 45spx}
+.resizedTextbox {width: 700px; height: 45px}
 
 .google-logo {
-    width:700px;
-    outline: none;
-    display: block;
-    margin-left: 630px;
+    margin:0 auto;
+    width:550px;
 }
 
 input {
@@ -128,13 +125,11 @@ input {
     margin-bottom:15px;
 }
 
-.mic {
+/*.mic {
     width: 14px;
     height: 20px;
     position: relative;
-    left: 335px;
-    top: 28px;
-}
+}*/
 
 .footer-left{
     float:left;
