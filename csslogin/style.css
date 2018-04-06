@@ -1,0 +1,90 @@
+body{
+	margin: 0;
+	padding: 0;
+	background-image: url("bgimage.jpg");
+	height: 100vh;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.user{
+	width: 90px;
+	height: 90px;
+	border-radius: 50%;
+	position: absolute;
+	top: calc(-100px/2);
+	left: calc(50% - 50px);
+}
+.w-full {
+	text-align: center;
+	width: 60%;
+}
+.txt2 {
+	position: absolute;
+	bottom: 0;
+	/*text-align: center;*/
+}
+.cancelbtn
+{
+	width: auto;
+	background-color: #f44336;
+	float: left;
+	box-sizing: border-box;
+	border-radius: 20px;
+}
+
+span.psw {
+	float: right;
+	padding-top: 16px;
+}
+
+.logo{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 450px;
+	height: 480px;
+	padding: 65px 50px;
+	box-sizing: border-box;
+	background: rgba(0, 0, 0, 0.5);
+}
+.logo p{
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	color: #fff;
+}
+.logo input{
+	width: 100%;
+	margin-bottom: 20px;
+}
+.logo input[type="text"],
+.logo input[type="password"]
+{
+	border: none;
+	border-bottom: 1px solid #fff;
+	outline: none;
+	background: transparent;
+	font-size: 16px;
+	height: 30px;
+	color: #fff;
+}
+.logo input[type="submit"]
+{
+	border: none;
+	outline: none;
+	height: 40px;
+	color: #fff;
+	font-size: 16px;
+	background-color: #f52887;
+	border-radius: 20px;
+}
+.logo input[type="submit"]:hover{
+	background: #333;
+}
+.logo a{
+	color: #fff;
+	font-weight: bold;
+	text-decoration: none;
+	font-size: 14px;
+}
