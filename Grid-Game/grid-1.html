@@ -1,0 +1,51 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Grid with random numbers</title>
+    <style>
+        #grid {
+            margin: 10px;
+            font-size: 1.25em;
+        }
+        table {
+            border-collapse: collapse;
+            border: 1px solid #7f7f7f;
+        }
+        td {
+            border:1px solid #7f7f7f;
+            width:50px;
+            height:50px;
+            text-align:center;
+        }
+    </style>
+</head>
+<body>
+<div id="grid"></div>
+<script>
+    let totalRows = 10;
+    let cellsInRow = 10;
+    let min = 1;
+    let max = 100;
+
+    function drawTable() {
+      let grid = document.getElementById('grid');
+      let tbl = document.createElement("table");
+
+      // Create rows in the table
+      for (var r = 0; r < totalRows; r++) {
+        let row = document.createElement("tr");
+
+        // In each row now create cells
+        for (var c = 0; c < cellsInRow; c++) {
+          let cell = document.createElement("td");
+          let cellText = document.createTextNode (Math.floor (Math.random () * (max - min + 1) + min));
+          cell.appendChild(cellText);
+          row.appendChild (cell);
+        }
+        tbl.appendChild (row);
+      }
+      grid.appendChild(tbl);
+    }
+    window.onload=drawTable;
+</script>
+</body>
