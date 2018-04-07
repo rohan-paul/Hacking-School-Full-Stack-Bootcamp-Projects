@@ -1,0 +1,11 @@
+{
+  "name": "grid-game",
+  "version": "1.0.0",
+  "description": "grid-game-with-js",
+  "main": "grid-1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
