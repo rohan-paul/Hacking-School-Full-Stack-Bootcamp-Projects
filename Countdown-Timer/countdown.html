@@ -1,0 +1,27 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Grid</title>
+    <script type="text/javascript" src="libs/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="libs/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="libs/bootstrap.min.css">
+
+    <script type="text/javascript" src="countdown.js"></script>
+    <link rel="stylesheet" type="text/css" href="countdown.css">
+</head>
+<body>
+<div class="container w-50 mt-5 p-4 counter-wrapper">
+    <h3 class="mb-4">Countdown Timer</h3>
+        <div class="counter form-inline">
+            <div class="counter-add mr-3">
+                <input type="date" class="form-control mr-3">
+                <button class="counter-start btn btn-primary">Start</button>
+            </div>
+            <div class="counter-remove">
+                <button class="counter-delete btn btn-danger">Remove Date</button>
+            </div>            
+        </div>
+    <label for="" class="counter-validation error text-danger my-3"></label>
+    <div class="counter-inner"></div>
+</div>
+</body>
