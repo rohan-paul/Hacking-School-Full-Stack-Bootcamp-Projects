@@ -2,26 +2,40 @@
 <head>
     <meta charset="utf-8">
     <title>Grid</title>
-    <script type="text/javascript" src="libs/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="libs/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="libs/bootstrap.min.css">
-
-    <script type="text/javascript" src="countdown.js"></script>
     <link rel="stylesheet" type="text/css" href="countdown.css">
 </head>
 <body>
 <div class="container w-50 mt-5 p-4 counter-wrapper">
     <h3 class="mb-4">Countdown Timer</h3>
-        <div class="counter form-inline">
-            <div class="counter-add mr-3">
-                <input type="date" class="form-control mr-3">
-                <button class="counter-start btn btn-primary">Start</button>
-            </div>
-            <div class="counter-remove">
-                <button class="counter-delete btn btn-danger">Remove Date</button>
-            </div>            
-        </div>
-    <label for="" class="counter-validation error text-danger my-3"></label>
+    <div class="counter form-inline">
+
+        <div class="counter-add mr-3"><input class="form-control mr-3" type="date" /><button class="counter-start btn btn-primary">Start</button></div>
+
+        <div class="counter-remove"><button class="counter-delete btn btn-danger">Remove Date</button></div>
+    </div><label class="counter-validation error text-danger my-3"></label>
+
     <div class="counter-inner"></div>
 </div>
+<script type="text/javascript" src="libs/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="libs/bootstrap.min.js"></script>
+<script type="text/javascript" src="countdown.js"></script>
 </body>
+</html>
+
+<!-- Bootstrap Notes -
+.container	- Fixed width container with widths determined by screen sites. Equal margin on the left and right.
+https://getbootstrap.com/docs/4.0/layout/grid/#how-it-works - Containers provide a means to center and horizontally pad your site’s contents. Use .container for a responsive pixel width or .container-fluid for width: 100% across all viewport and device sizes.
+w-50 - https://v4-alpha.getbootstrap.com/utilities/sizing/ - Easily make an element as wide or as tall (relative to its parent)
+mb-4 - margin-bottom - https://getbootstrap.com/docs/4.0/utilities/spacing/ - 4 set the margin-bottom to $spacer * 1.5
+mr-3 - sets margin-right to $spacer
+How to use spacing utilities - https://stackoverflow.com/questions/35363194/how-do-i-use-the-spacing-utility-classes-on-bootstrap-4
+mb-2 = margin bottom 2 spacing units
+m-0 = no margins
+pt-3 = padding top 3 spacing units
+p-1 = padding all sides 1 spacing unit
+my-2 = margin top & bottom 2 spacing units
+mx-0 = no margins left & right
+px-3 = padding left & right 3 spacing units
+
+-->
