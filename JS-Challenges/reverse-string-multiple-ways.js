@@ -6,5 +6,25 @@ function reverseString(str) {
   return str.split("").reverse().join("");
 }
 
-console.log(reverseString("paul"));
+// console.log(reverseString("hello"));
 
+/*2-nd Approach - Using Recursion.
+A> Per the standard mechanism of recursion, for the single line of code, where I am calling the same function, I will not have a single code to execute, but several nested calls that will stack up with each call.
+B> With each recursive call the stack will build up as below..
+
+recursionReverse('hello')
+(recursionReverse('ello') + 'h')
+((recursionReverse('llo') + 'e') + 'h')
+(((recursionReverse('lo') + 'l') + 'e') + 'h')
+((((recursionReverse('o') + 'l') + 'l' ) + 'e') + 'h')
+(((('o') + 'l') + 'l' ) + 'e') + 'h')
+
+That's it, terminal case reached and the most highly nested call returns immediately, which is the last line above
+*/
+function reverseRecursive(str) {
+  if (str === "") {
+    return "";
+  } else {
+    return reverseRecursive(str.substr(1) + str.charAt(0));
+  }
+}
