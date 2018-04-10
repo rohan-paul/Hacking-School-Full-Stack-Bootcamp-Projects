@@ -19,6 +19,24 @@ function swapNumber2(a, b) {
 }
 // swapNumber2(2, 4);
 
+function swapNumber3(a, b) {
+  console.log('before swap: ', 'a: ', a, 'b: ', b);
+  b = [a, a = b][0];
+  console.log('after swap: ', 'a: ', a, 'b: ', b);
+}
+// swapNumber3(18, 204);
+
+function swapNumber4(a, b) {
+  console.log('before swap: ', 'a: ', a, 'b: ', b);
+  a = b + (b = a, 0);
+  console.log('after swap: ', 'a: ', a, 'b: ', b);
+}
+swapNumber4(34, 584);
+
+/*How the above swapNumber4() works:
+  (b=a, 0) sets b to a and yields 0
+a = b + 0 sets a to the original value of b*/
+
 function swapNumberXOR(a, b) {
   console.log('before swap: ', 'a: ', a, 'b: ', b);
   a ^= b;
@@ -27,9 +45,9 @@ function swapNumberXOR(a, b) {
   console.log('after swap: ', 'a: ', a, 'b: ', b);
 }
 
-console.log((2).toString(2)); //  outputting 10
-console.log((4).toString(2)); //  outputting 100
-swapNumberXOR(2, 4);
+// console.log((2).toString(2)); //  outputting 10
+// console.log((4).toString(2)); //  outputting 100
+// swapNumberXOR(2, 4);
 /* Output -
 before swap:  a:  2 b:  4
 after swap:  a:  4 b:  2
