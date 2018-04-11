@@ -14,7 +14,7 @@ Also note that the lengths of the 2 2-d arrays are same. i.e arr1.length == arr2
 
 Basically, to do matrix addition simply add up the values inside the inner-array-1 with the corresponding values found on the inner-Array-2.
   */
-// Alterntive-1
+// Alternative-1
 function matrixAddition (arr1, arr2) {
   let result = []; // the final output which is also a 2-d array
   for (var i = 0; i < arr1.length; i++) {
@@ -46,7 +46,7 @@ B> The first argument numItem in arr1.forEach is the value of the current index 
 C> We can use index1 to reference the corresponding inner array on 2dArray arr2 from the inner iteration arrItem.forEach and use the arrItem.forEach index argument which I labeled index2 to reference the numbers in 2dArray b by reading arr2[index1][index2].
 */
 
-// The most concise mechanism using .map functiion
+// The most concise mechanism using .map function
 function matrixAddition (arr1, arr2) {
   return arr1.map(function (n, i) {
     return n.map(function(o, j) {

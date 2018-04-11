@@ -43,7 +43,8 @@ var squrt = function (num) {
 };
 // console.log(squrt(25));
 
-// Check if a number is any power of 2
+// Check if a number is any power of 2. Its the same logic as checking if a number is power of 4 (see my file ifPowerOfFour.js ).
+/* Notes - Keep dividing the number by two, i.e, do n = n/2 iteratively until n becomes 1. In any iteration, if n%2 becomes non-zero and n is not 1 then n is not a power of 2. If n becomes 1 then it is a power of 2. */
  var isPowerOfTwo = function (num) {
 	while ( num != 1) {
 	  num = (num / 2);
@@ -56,7 +57,6 @@ var squrt = function (num) {
 };
 // console.log(isPowerOfTwo(12));
 
-/* Notes - Keep dividing the number by two, i.e, do n = n/2 iteratively until n becomes 1. In any iteration, if n%2 becomes non-zero and n is not 1 then n is not a power of 2. If n becomes 1 then it is a power of 2. */
 
 // reversing an array using a temporary var
 var reverseArray = function (arr) {
