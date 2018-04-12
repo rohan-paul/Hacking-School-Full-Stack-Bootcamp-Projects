@@ -58,14 +58,13 @@ function binToDecimal (bin) {
 }
 
 // Binary to decimal using reduce()
-function binToDecimal3 (bin) {
+function binToDecimal (bin) {
     // split and reverse, as I need to assign the highest exponent (bin.length -1) to the first element of the given binary number.
     let reversed = bin.split('').reverse();
     return reversed.reduce(function(accumulator, element, exponent) {
-        return (element === 1 ? (accumulator + Math.pow(element, exponent)) : accumulator);
+        return ((element === '1') ? (accumulator + Math.pow(2, exponent)) : accumulator);
         }, 0);
 }
-
 
 console.log(binToDecimal("100101"));
 
