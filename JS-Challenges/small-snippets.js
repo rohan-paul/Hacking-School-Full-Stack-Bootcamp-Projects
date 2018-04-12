@@ -8,7 +8,7 @@ function power (base, exponent) {
 }
 // console.log(power(2,3));
 
-// Bitwise left shift operator can be a replacement for Math.pow() when dealing with bases of 2.
+// Bitwise left shift operator can be a replacement for Math.pow() when dealing ONLY with bases of 2.
 // This is great being a constant time solution.
 function powerBitWiseBaseTwo (exponent) {
   return 1 << exponent;
@@ -69,9 +69,12 @@ var reverseArray = function (arr) {
 
 // reversing an array without using a temporary var
 /* In below, the map() method creates a new array with the results of calling a provided function on every element in the calling array.
-A> So, in the callback function, I am just pulling the last element of the given original array, and returning it first.
+
+A> So, in the callback function, I am just pulling the last element of the given original array, and returning it first. As for the last element the part arr.[arr.length - 1 - index] is arr.[arr.length - 1 - 0] - which is the last element of the array.
  (and the argument index is the index of the current element being processed, ie. it will start form index=0 of the given original array).
+
 B> Then for the second loop, index will be 1, i.e. I am pulling the element (arr.length - 1 - 1) i.e. the second last element, and returning it to be placed as the second element of the new array to be created.
+
 C> And this way, for the last loop, I will be pulling arr[(arr.((length -1)-(length-1)))] element, i.e. the arr[0] element of the original array, and place it to be the last
 */
 var reverseArray = function(arr) {

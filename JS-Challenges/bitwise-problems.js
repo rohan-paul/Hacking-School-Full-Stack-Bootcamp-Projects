@@ -15,16 +15,14 @@ For example for the number 6 if I have to left-shift 2 bits, the following algeb
 For example for the number 6 if I have to right-shift 2 bits, the following algebra will hold true.  (6 >> i = 6 / 2^i) and Deriving the General Formula.
  */
 function isRightShift (num, shiftNum) {
-    if ( (num / (2 ** shiftNum)) == ( num >> shiftNum)) {
+    if ( Math.floor((num / (2 ** shiftNum))) == ( num >> shiftNum)) {
         return true;
     } else {
         return false;
     }
     }
 
-console.log(isRightShift(3, 1));
+console.log(isRightShift(6, 2));
+// console.log((3 / (2 ** 1)));
+// console.log(3 >> 1);
 
-
-// let signedBin = (data.substr(0,1) === '1' ? '-':'+') + parseInt(data,2).toString(10);
-
-// console.log(signedBin);
