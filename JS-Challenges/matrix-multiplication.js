@@ -55,7 +55,7 @@ return result;
 }
 
 // Alternative-2
-/* A> Here with reduce() method, I am executing the function ( return sum + (elm*B[k][j]) ) on each element of the array from left to right, reducing the array to a single value. And the initial-value to the reduce() method is set to be at 0  */
+/* A> Here with reduce() method, I am executing the function ( return sum + (elm * B[k][j]) ) on each element of the array from left to right, reducing the array to a single value. And the initial-value to the reduce() method is set to be at 0  */
 /* function multiplyMatrices (A, B) {
   var result = new Array(A.length).fill(0).map(row => new Array(B[0].length).fill(0));
 

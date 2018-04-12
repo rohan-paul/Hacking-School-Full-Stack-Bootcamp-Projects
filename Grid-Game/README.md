@@ -1,1 +1,1 @@
-A work-in-progress exercise to build a 10 * 10 grid in the browser.
+Build a 10 * 10 grid filled with no 1 to 100 and when I click on any cell, all other cells containing number which are multiple of this cell's number gets replaced with a "*" . The [JSfiddle is here](https://jsfiddle.net/rohanpaul/j00h653c/4/)

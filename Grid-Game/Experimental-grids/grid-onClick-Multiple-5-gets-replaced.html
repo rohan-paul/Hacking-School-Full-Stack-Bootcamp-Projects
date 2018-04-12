@@ -18,6 +18,7 @@
             text-align:center;
         }
     </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
 <div id="grid"></div>
@@ -48,37 +49,25 @@
 
         cell.appendChild(cellText);
         row.appendChild (cell);
-
-        // Code to check that each cell got its 'id' attribute set, as its corresponding cellText value.
-        cell.addEventListener(
-          "click",
-          function(e) {
-            var id = e.target.id;
-            if (id % 5 == 0) {
-              var myTable = document.getElementById("table").rows;
-              var y;
-              for(var i = 0; i < 10; i++)
-              {    for(var j = 0; j < 10; j++)
-                {
-                  y = myTable[i].cell;
-                  //do something with cells in a row
-                  // cell.setAttribute('id', ("200"));
-                  y[j].setAttribute('id', ("200"));
-                  y[j].innerHTML = "*";
-                }
-              }
-            }
-          },
-          false);
       }
       tbl.appendChild (row);
     }
     grid.appendChild(tbl);
   }
-  window.onload=drawTable;
-  window.onload=appendSpace;
 
-
+$( document ).ready(function() {
+drawTable();
+$( "#grid table tr td" ).on( "click", function(event) {
+    var id = event.target.id;
+    if (id % 5 == 0) {
+    $( "#grid table tr td" ).each(function( index ) {
+    	if ($(this).text() % 5 == 0) {
+  			$(this).text($(this).text()+'**');
+      }
+		});
+  }
+});
+});
 </script>
-<script type="text/javascript" src="libs/jquery-3.3.1.min.js"></script>
 </body>
+</html>

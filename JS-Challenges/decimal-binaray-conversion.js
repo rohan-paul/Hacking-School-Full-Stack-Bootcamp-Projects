@@ -69,10 +69,9 @@ function binToDecimal (bin) {
 console.log(binToDecimal("100101"));
 
 function signedBinary (decimalNum) {
-    let binary = decimalNum.toString(2);
-    // console.log(binary);
-    return ((binary.substr(0,1) === '1' ? '-':'+')) + binary;
-    // return result;
+    // let binary = decimalNum.toString(2);
+    return decimalNum.toString(2);
+    // return ((binary.substr(0,1) === '1' ? '-':'+')) + binary;
 }
 
-// console.log(signedBinary(-8));
+console.log(signedBinary(-8));
