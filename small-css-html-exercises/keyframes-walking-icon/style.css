@@ -52,7 +52,7 @@ html, body{
 /*// KEYFRAMES //*/
 @keyframes drive {
     from {transform: translateX(0)}
-    to {transform: translateX(800px)}
+    to {transform: translateX(1600px)}
     // The translate() method moves an element from its current position to a new one.
 }
 

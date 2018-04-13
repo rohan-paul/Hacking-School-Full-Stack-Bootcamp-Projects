@@ -76,5 +76,20 @@ function matrixDiagonalSums(matrix) {
 let myMatrix1 = [[20, 40], [10, 60]];
 let myMatrix2 = [ [1, 2, 3], [4, 5, 6], [7, 8, 9] ];
 
-matrixDiagonalSums(myMatrix1);  // should output 80, 50
-matrixDiagonalSums(myMatrix2); // should output 15, 15
+// matrixDiagonalSums(myMatrix1);  // should output 80, 50
+// matrixDiagonalSums(myMatrix2); // should output 15, 15
+
+function matrixDiagonalSums (myMatrix) {
+    var matrix = [], row
+    for (var i = myMatrix; i > 0; i--) {
+      var x = i*(i-1)/2 + 1, dx = i
+      matrix.push(row = [])
+      for (var j = myMatrix; j > 0; j--) {
+        row.push(x)
+        x += (i < j ? ++dx : dx--)
+      }
+    }
+    return matrix
+  }
+
+  console.log(matrixDiagonalSums(myMatrix1));
