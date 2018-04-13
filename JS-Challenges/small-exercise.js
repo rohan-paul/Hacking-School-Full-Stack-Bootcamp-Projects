@@ -1,4 +1,4 @@
-/* Problem-2 */
+/* Problem-Fizz-Buzz - Print your name with the below conditions of dividing by 3 and 5*/
 
 function printName() {
     for (var i = 1; i <= 100; i++) {
@@ -17,24 +17,3 @@ function printName() {
 }
 
 // printName();
-
-
-
-/*  20 40
-    10 60
-//  80, 50
-*/
-
-function matrixDiagonalSums(matrix) {
-
-    let mainSum = 0, secondarySum = 0;
-    for (let row = 0; row < matrix.length; row++) {
-        mainSum += matrix[row][row];
-        secondarySum += matrix[row][matrix.length - row - 1];
-    }
-    console.log(mainSum + ', ' + secondarySum);
-}
-
-// let myMatrix = [[20, 40], [10, 60]];
-let myMatrix = [ [1, 2, 3], [4, 5, 6], [7, 8, 9] ];
-matrixDiagonalSums(myMatrix);
