@@ -79,17 +79,22 @@ let myMatrix2 = [ [1, 2, 3], [4, 5, 6], [7, 8, 9] ];
 // matrixDiagonalSums(myMatrix1);  // should output 80, 50
 // matrixDiagonalSums(myMatrix2); // should output 15, 15
 
-function matrixDiagonalSums (myMatrix) {
-    var matrix = [], row
-    for (var i = myMatrix; i > 0; i--) {
-      var x = i*(i-1)/2 + 1, dx = i
-      matrix.push(row = [])
-      for (var j = myMatrix; j > 0; j--) {
-        row.push(x)
-        x += (i < j ? ++dx : dx--)
+// Suboptimal Solution in O(n^2)
+function matrixDiagonals(matrix) {
+  let diagonal1 = 0, diagonal2 = 0;
+
+  for (var i = 0; i < matrix.length; i++) {
+    for (var j = 0; j < matrix.length; j++) {
+      // Get elements for the main diagonal (diagonal-1). So I need to increment the i and j equally
+      if ( i === j ) {
+        diagonal1 += matrix[i][j];
+      }
+      // Get elements for the secondary diagonal (diagonal-2). So I need to decrement j. Taking the value of the inner array from reverse (i.e. last element comes first)
+      if ( j = (matrix.length) - i - 1) {
+        diagonal2 += matrix[i][j];
       }
     }
-    return matrix
   }
+}
 
-  console.log(matrixDiagonalSums(myMatrix1));
+  console.log(matrixDiagonalSums(myMatrix2));
