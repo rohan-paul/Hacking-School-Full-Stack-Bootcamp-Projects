@@ -1,24 +1,24 @@
 {
   "courses" : {
-    "angular-complete-guide" : {
-      "description" : "Master Angular (Angular 2+, incl. Angular 5) and build awesome, reactive web apps with the successor of Angular.js",
-      "title" : "Angular - The Complete Guide",
-      "url" : "https://codingthesmartway.com/courses/angular2-complete-guide/"
+    "The Hacking School" : {
+      "description" : "With a global curriculum, the focus is on arming you with skills that are most in-demand in the industry. ",
+      "title" : "The Hacking School-Inspired from the Silicon Valley",
+      "url" : "http://thehackingschool.com/"
     },
-    "learn-ionic3-from-scratch" : {
-      "description" : "Create Cross Platform Mobile Applications with Ionic 3, Angular 4, TypeScript and Firebase.",
-      "title" : "Learn Ionic 3 From Scratch",
-      "url" : "https://codingthesmartway.com/courses/ionic3/"
+    "Ace Hacker" : {
+      "description" : "Ace Hacker is all about honing skills and writing great code. We compete in sports programming. We collaborate with and contribute to the open source community.",
+      "title" : "Ace Hacker-Hackers make the world a better place",
+      "url" : "http://www.acehacker.com/"
     },
-    "modern-react-with-redux" : {
-      "description" : "Master the fundamentals of React and Redux with this tutorial as you develop apps with React Router, Webpack, and ES6",
-      "title" : "Modern React With Redux",
-      "url" : "https://codingthesmartway.com/courses/modern-react-with-redux/"
+    "geekskool" : {
+      "description" : "3 month, full time, intensive, coding and training program held in Bangalore. Participants are encouraged to create open source projects in their areas of interest.",
+      "title" : "Geekskool-Let your code do the talking",
+      "url" : "https://www.geekskool.com/"
     },
-    "vuejs2-complete-guide" : {
-      "description" : "Vue JS is an awesome JavaScript Framework for building Frontend Applications! VueJS mixes the Best of Angular + React!",
-      "title" : "Vue.js 2 - The Complete Guide",
-      "url" : "https://codingthesmartway.com/courses/vuejs2-complete-guide"
+    "Hack Reactor Remote" : {
+      "description" : "Available as a full-time or part-time program, Hack Reactor’s Live Online Immersive coding bootcamp takes the time-tested curriculum of the campus-based Hack Reactor immersive, and makes it accessible to students all across the world.",
+      "title" : "Hack Reactor Remote-Remote shouldn’t feel like you’re alone",
+      "url" : "https://www.hackreactor.com/remote-immersive"
     }
   }
 }
