@@ -1,6 +1,8 @@
 # TinyBootstrapNg5
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
+Deployed at surge - [http://bootcamps-in-india.surge.sh/](http://bootcamps-in-india.surge.sh/)
+
+This project was bootstrapped with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
 
 ## Development server
 

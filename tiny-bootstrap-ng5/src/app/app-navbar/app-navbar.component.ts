@@ -11,5 +11,4 @@ export class AppNavbarComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }
