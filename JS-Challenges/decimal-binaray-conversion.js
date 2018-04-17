@@ -8,14 +8,37 @@ function decimalToBinary (decNum) {
     return bitsArray.reverse().join('');
   }
 
-// Converting Decimal to Binary - Alternative-1
-
+// Converting Decimal to Binary - Alternative-2
 function decimalToBinStr (decNum) {
 return decNum.toString(2);
 }
 
-// Converting Binary to Decimal
+// Converting Decimal to Binary - Alternative-3 with recursion
+function decToBinRecursive(num){
+    if(num >= 1){
+      return decToBinRecursive(Math.floor(num/2))+(num % 2);
+    }
+    return '';
+  }
 
+  /* Explanation of the recursive process
+  decToBinRecursive(21)
+  = decToBin(Math.floor(21 / 2)) + (21 % 2) = decToBin(10) + 1
+
+  = decToBin(Math.floor(10/2)) + (10 % 2) + 1 = decToBin(5) + 0 + 1
+
+  = decToBin(Math.floor(5/2)) + (5 % 2) + 0+ 1 = decToBin(2) + 1 + 0 + 1
+
+  = decToBin(Math.floor(2/2)) + (2 % 2) +1 + 0+ 1 = decToBin(1) + 0 + 1 + 0 + 1
+
+  = decToBin(Math.floor(1/2)) + (1 % 2) + 0 +1 + 0+ 1 = decToBin(1) + 1 + 0 + 1 + 0 + 1 // Here the abort-condition is reached and the loop stops
+
+  */
+
+  console.log(decToBinRecursive(21)); // Will output 10101
+
+
+// Converting Binary to Decimal
 function binToDec (bin) {
     return parseInt(bin, 2);
 }
@@ -66,7 +89,8 @@ function binToDecimal (bin) {
         }, 0);
 }
 
-console.log(binToDecimal("100101"));
+
+// console.log(binToDecimal("100101"));
 
 function signedBinary (decimalNum) {
     // let binary = decimalNum.toString(2);
@@ -74,4 +98,4 @@ function signedBinary (decimalNum) {
     // return ((binary.substr(0,1) === '1' ? '-':'+')) + binary;
 }
 
-console.log(signedBinary(-8));
+// console.log(signedBinary(-8));
