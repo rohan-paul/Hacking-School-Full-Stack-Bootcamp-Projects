@@ -1,0 +1,17 @@
+#grid {
+    margin: 10px;
+    font-size: 2em;
+  }
+
+  table {
+    border-collapse: collapse;
+    border: 1px solid #7f7f7f;
+  }
+
+  td {
+    border: 1px solid #7f7f7f;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    background-color: aquamarine;
+  }

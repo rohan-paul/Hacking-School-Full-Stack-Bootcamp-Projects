@@ -1,0 +1,26 @@
+.currentmonth {
+    color: blue;
+    text-align: center;
+}
+
+.currentday {
+    border: 1px solid black;
+    color: greenyellow;
+    text-align: center;
+}
+
+table.calendar {
+    margin: 1em 1em 2em 1em;
+}
+
+table.calendar td,
+table.calendar th {
+    padding: 0.5em;
+}
+
+table.calendar {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    vertical-align: top;
+}
