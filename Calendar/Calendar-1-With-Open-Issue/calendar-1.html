@@ -1,14 +1,43 @@
 <html>
 
-<head>
-  <meta charset="utf-8">
-  <title>Full Year Calendar</title>
-  <link rel="stylesheet" type="text/css" href="calendar.css">
-</head>
+  <head>
+    <meta charset="utf-8">
+    <title>Custom Calendar</title>
+    <link rel="stylesheet" type="text/css" href="calendar-1.css">
+  </head>
 
-<body>
-  <div id="calendar"></div>
-  <script type="text/javascript" src="calendar.js"></script>
-</body>
+  <body>
+    <h2>Select the month</h2>
+    <select id="monthNumb" onchange="monthSelected(this.value)">
+    <option value="#"></option>
+    <option value="0">January</option>
+    <option value="1">February</option>
+    <option value="2">March</option>
+    <option value="3">April</option>
+    <option value="4">May</option>
+    <option value="5">June</option>
+    <option value="6">July</option>
+    <option value="7">August</option>
+    <option value="8">September</option>
+    <option value="9">October</option>
+    <option value="10">November</option>
+    <option value="11">December</option>
+</select>
+    <hr/>
+
+    <table>
+      <tr>
+        <td>Sun</td>
+        <td>Mon</td>
+        <td>Tue</td>
+        <td>Wed</td>
+        <td>Thu</td>
+        <td>Fri</td>
+        <td>Sat</td>
+      </tr>
+    </table>
+    <div id="grid" style="margin-left: 0px;"></div>
+    <script src="./calendar-1.js"></script>
+  </body>
 
 </html>

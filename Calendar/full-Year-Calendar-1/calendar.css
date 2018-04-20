@@ -9,6 +9,10 @@
     text-align: center;
 }
 
+.weekdays {
+    color: greenyellow;
+}
+
 table.calendar {
     margin: 1em 1em 2em 1em;
 }
