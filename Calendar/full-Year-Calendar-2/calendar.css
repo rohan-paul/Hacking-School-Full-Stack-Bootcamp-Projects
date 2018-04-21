@@ -4,15 +4,13 @@
 }
 
 .currentday {
-    border: 2px solid black;
-    color: red;
+    border: 1px solid black;
+    color: greenyellow;
     text-align: center;
-    font-weight: bold;
-    /* background-color: whitesmoke; */
 }
 
 .weekdays {
-    color: black;
+    color: greenyellow;
 }
 
 table.calendar {
