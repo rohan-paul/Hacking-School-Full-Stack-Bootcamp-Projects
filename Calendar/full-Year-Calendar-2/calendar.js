@@ -1,110 +1,118 @@
-(function () {
-    function calendar(month) {
+const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
-      //declare few variables
-      let padding = "";
-      let totalFeb = "";
-      let i = 1;
-      let testing = "";
+for (var i = 0; i < 12; i++) {
+  //create a table for each month
+  let div = document.createElement('div');
+  let table = document.createElement('table');
+  let thead = document.createElement('thead');
+  let tbody = document.createElement('tbody');
+  let title = document.createElement('h2');
 
-      let current = new Date();
-      let cmonth = current.getMonth();
-      let day = current.getDate(); // The getDate() is to find which no of days this date is in the MONTH. It returns the day of a date as a number (1-31):
-      let year = current.getFullYear();
-      let tempMonth = month + 1 // + 1 is used to match up the current month with the correct start date.
+  /* A> Get the weeks (which is an array of objects) for a given month. So createCalendar() will return me an array of weeks. For example say, it will give me 5 weeks for this months. Each of those weeks is an array of objects. So, the result variable is a 2-D Array.
+  B> So first iterate through the week, and then in turn, just like a 2-D array access each of the cells of each week */
+  let calendar = createCalendar(2018, i);
 
-      /* A year is leap year if following conditions are satisfied
-      1) Year is multiple of 400
-      2) Year is multiple of 4 and not multiple of 100. */
+  // Start iterating through the 2-D array of result variable that was returned from createCalendar
+  for (var j = 0; j < calendar.length; j++) {
+    //create table rows for each week and assign this current element of result array to a new "week" variable .
+    let tr = document.createElement('tr');
+    let week = calendar[j];
 
-      if (month == 1) {
-        if ((year % 100 !== 0) && (year % 4 === 0) && (year % 400 === 0)) {
-          totalFeb = 29;
-        } else {
-          totalFeb = 28;
-        }
-      }
+    // Iterate the inner array of the 2D result array, which is the days of each individual weeks.
+    for (var k = 0; k < week.length; k++) {
+      let td = document.createElement('td');
+      let day = week[k];  // note each element of week is an object, so this 'day' will be assigned that particular object.
 
-      let monthNames = ["Jan", "Feb", "March", "April", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"];
-      let dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-      let totalDays = ["31", "" + totalFeb + "", "31", "30", "31", "30", "31", "31", "30", "31", "30", "31"];
+      // set this day of the month (as a number from 1 to 31) as table cell textContent
+      td.textContent = day.date.getDate();
 
-      // tempDate variable is for finding out the first date of the month, which I will need to find the which weekday this first date falls into, so I can start the weekday accordingly.
-      let tempDate = new Date(tempMonth + ' 1 ,' + year);
+      // add to this cell the before after class if the condition in the object (defined below in createCalendar function) is satisfied
+      day.before && td.classList.add('before');
+      day.after && td.classList.add('after');
 
-      /* Above line, will get the first date (date no 1) of this month. The ' 1 ' here, is just a concatenation of a string to tempMonth (NOT a mathematical addition to tempMonth) and just represents that its the 1-st of the month that I am searching for. Note carefully the syntax of the new Date() function here.
-      So this syntax, conforms to the syntax given in here (https://stackoverflow.com/a/44747069/1902852)
-      < var originalDate = new Date('January 5, 2017 12:00:00'); >
-      That is for my above code < new Date(tempMonth + ' 1 ,' + year) > will give me, for example, "Jan 1 2018"
+      // And now that the cell is fully prepared with textContent and class, mount the table cell to this row.
+      tr.appendChild(td);
 
-        A> The getDate() method returns the day of a date as a number (1-31):
-
-        B>  last day of a month is -1 day of the 1st day of the following month.
-        https://stackoverflow.com/questions/13571700/get-first-and-last-date-of-current-month-with-javascript-or-jquery
-
-      var date = new Date();
-      var firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
-      var lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0);
-
-      in other words,
-
-      var FirstDay = new Date(year, month, 1);
-      var LastDay = new Date(year, month + 1, 0);
-
-      In the above, I am using 0 for the last day, as days of day in a month is returned as number 1 - 31. So, the -1-th day of the 1st day of the following month will be ( 1 - 1) i.e. zero.
-      */
-
-      let tempWeekday = tempDate.getDay();
-      // tempWeekday is the first day of the month, expressed as a weekday. getDay() returns the day of the week (0-6) for the specified date according to local time.
-      let tempWeekday2 = tempWeekday;
-      let totalDaysInMonth = totalDays[month];
-
-
-      /* After getting the first day of the week for the month, padding the other days for that week with the previous months days.  i.e. if the first day of the week is on a Thursday, then this fills in Sun - Wed with the last months dates, counting down from the last  day on Wed, until Sunday.
-      And because this tempWeekday variable is being modified in the immediately blow while loop, I need to have another variable to fill up the calender of the current month. Also this tempWeekday2 variable will cycle through values from 0 to 6 and then again back to 0 and then to 6 for each week of a month */
-      while (tempWeekday > 0) {
-        padding += "<td class='premonth></td>"
-        tempWeekday--;
-      }
-
-      // Now fill in the cells / days of individual months
-      while (i <= totalDaysInMonth) {
-        // After the 7 column (on a zero based index) start a new row
-        if (tempWeekday2 > 6) {
-          tempWeekday2 = 0;
-          padding += "<tr></tr>"
-        }
-
-        /* Now if i is equal to the current day, make the color of that cell a different color using CSS. Also add a rollover effect to highlight the day the user rolls over. This loop creates the acutal calendar that is displayed. */
-        if ( i == day && month == cmonth) {
-          padding += "<td class='currentday' onMouseOver='this.style.background=\"#00FF00\"; this.style.color=\"#FFFFFF\"' onMouseOut='this.style.background=\"#FFFFFF\"; this.style.color=\"#00FF00\"'>" + i + "</td>";
-        } else {
-          padding += "<td class='currentmonth' onMouseOver='this.style.background=\"#00FF00\"; onMouseOut='this.style.color=\"#FFFFFF\"'>" + i + "</td>";
-        }
-        tempWeekday2++;
-        i++
-      }
-
-      // Now build the whole 12 month calendar grid and also putting in the months name and days of the week.
-     let calendarTable = "<table class='calendar'> <tr class='currentmonth'><th colspan='7'>" + monthNames[month] + " " + year + "</th></tr>";
-     calendarTable += "<tr class='weekdays'> <td>Sun</td>  <td>Mon</td> <td>Tues</td> <td>Wed</td> <td>Thurs</td> <td>Fri</td> <td>Sat</td> </tr>";
-     calendarTable += "<tr>";
-     calendarTable += padding;
-     calendarTable += "</tr></table>";
-     document.getElementById("calendar").innerHTML += calendarTable;
-    } // calendar function ends here.
-
-    // run the calendar function 12 times to generate the full 12 months
-    function run12() {
-      for (i = 0; i < 12; i++) {
-        calendar(i);
-      }
+      // Note that here at this point, I am still inside the inner loop, and so, will continue to append all the td's to the row.
     }
+  // And now, I am in the outer array, and all the tds for this row, has been appended above inside the inner array. So, now work on this row is completely done and hence, mount this row to the tbody;
+  tbody.appendChild(tr);
+  }
+  // create and populate the thead of each month with weekday names
+  thead.innerHTML = '<tr><td>' + 'Su Mo Tu We Th Fr Sa'.split(' ').join('</td><td>') + '</td></tr>';
 
-    //Now load window
-    if (window.addEventListener) {
-      window.addEventListener('load', run12, false);
-    } else if (window.attachEvent) {
-      window.attachEvent('onload', run12);
+  // mount thead and tbody
+  table.appendChild(thead);
+  table.appendChild(tbody);
+
+  // Prepare the title with months names
+  title.innerHTML = MONTHS[i];
+
+  // mount the title and table itself to the div
+  div.appendChild(title);
+  div.appendChild(table);
+
+  document.body.appendChild(div);
+}
+
+/*A> This createCalender function will be run 12 times, creating each day staring from firstSunday to lastSaturday of this current month's DOM table.
+Each row is represented by the variable "week" which is an array of objects (key-value pair, )
+B> The createCalendar() finally will return the variable result, which is an array of weeks */
+
+function createCalendar(year, month) {
+  let results = [];
+
+  //find last and first days of month
+  let firstDate = new Date(year, month, 1);
+  let lastDate = new Date(year, month + 1, 0);
+
+  //Find fist sunday and last saturday from handler function
+  let firstSunday = getFirstSunday(firstDate);
+  let lastSaturday = getLastSaturday(lastDate);
+
+  // Start iterating from first sunday of this current months where i = 0
+  let iterator = new Date(firstSunday);
+  let i = 0;
+
+  //..until last saturday
+  while (iterator <= lastSaturday) {
+    // first sunday of this month is i = 0 and the consecutive sundays will fall on i = 7 then 14 then 21.
+    if ( i++ % 7 === 0 ) {
+      // start a new week when I hit the next sunday
+      var week = [];
+      results.push(week);
     }
-  })();
+    // push individual days of the month to week by inserting into array "week" an object of key-value pairs. So with each iteration, I am creating an object inside of the push() method. So the syntax is like - myArray.push({ })
+    week.push({
+      date: new Date(iterator),
+      before: iterator < firstDate, // add indicator if before current month
+      after : iterator > lastDate  // add indicator if after current month
+    });
+    // Increment iterator to move to next date
+    iterator.setDate(iterator.getDate() + 1);
+  }
+  return results;
+} // createCalendar() functions ends here
+
+//Given the first date of a month, find the first Sunday
+/*A> That is I want to return from the function, the first sunday that falls within that month-table in the DOM, NOT the first sunday that is withing that calendar month.
+B> So, first find the weekday number (in number form 0 to 6) of the first day of the month. Say I get 4 for Thursday.
+C> Then get the date of the day which is at -4 position from that day, in other words, -4 position from Thursday is a Sunday. setDate()
+
+getDate() returns the day of the month (from 1 to 31) for the specified date.
+getDay() returns the day of the week (from 0 to 6) for the specified date. */
+
+function getFirstSunday(firstDate) {
+  let offset = firstDate.getDay(); // e.g. for Thursday the offset is 4.
+  let result = new Date(firstDate);
+  return result.setDate(firstDate.getDate() - offset);
+}
+
+//Given the last date of a month, find the last Saturday.
+/*A> That is I want to return from the function, the last saturday that falls within that month-table in the DOM, NOT the last saturday that is within that calendar month.
+*/
+function getLastSaturday(lastDate) {
+  var offset = 6 - lastDate.getDay();
+  var result = new Date(lastDate);
+  return result.setDate(lastDate.getDate() + offset);  
+}
