@@ -55,7 +55,7 @@ function reverseString4 (str) {
 // console.log(reverseString4("hello"));
 
 
-/* Uses swap method to reverse; need to traverse only half of the array. Effective for long string.
+/* Alternative-5 Uses swap method to reverse; need to traverse only half of the array. Effective for long string.
 A> With each iteration, I am taking the the upper half’s value (calculated by deducting the current position by the string length), which is then temporary stored in a temp variable.
 B> Then swap that value with the lower half’s value. So, for the fist iteration, I will replace, the last element with the first element of the array.
 C> In the next iteration, I will swap the second last upper half element, with second last lower-half element.
@@ -76,3 +76,24 @@ function reverseStringHalfIndex(str) {
 }
 
 // console.log(reverseStringHalfIndex("hello"));
+
+// Alternative-6 - Uses the new for-of syntax of ES6 which traveses through each element / char of an iterable object from index=0 to the last element / char
+function reverseString (str) {
+  let reverse = "";
+
+  for (character of str) {
+    reverse = character + reverse;
+  }
+  return reverse;
+}
+// console.log(reverseString("Rohan"));
+
+// Alternative-6 - Uses the same above for-of syntax of ES6 which traveses through each element / char of an iterable object from index=0 to the last element / char, but with reduce, and the first accumulator passed to recuce () is an empty string ''
+
+function reverseStr(str) {
+  return str.split('').reduce ((accumulator, index) => {
+    return  index + accumulator;
+  }, '')
+}
+
+console.log(reverseStr("rohan"));
