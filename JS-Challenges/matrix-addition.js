@@ -16,7 +16,9 @@ Basically, to do matrix addition simply add up the values inside the inner-array
   */
 // Alternative-1
 function matrixAddition (arr1, arr2) {
+  
   let result = []; // the final output which is also a 2-d array
+  
   for (var i = 0; i < arr1.length; i++) {
     result[i] = []; // set this first element of the resulting array to be an empty array, and I am going to fill this index position up with the next lines of codes
     for (var j = 0; j < arr1.length; j++) {
