@@ -36,7 +36,7 @@ function removeDuplicateFromArr(arr) {
     return uniqueArr;
 }
 
-console.log(removeDuplicateFromArr([1,3,3,3,1,5,6,7,8,1]));
+// console.log(removeDuplicateFromArr([1,3,3,3,1,5,6,7,8,1]));
 
 // Problem Statement - Generate Random between in a given Range
 
@@ -62,3 +62,8 @@ Paul-Note - So, if I dont add Min of 5, the formulae will give me all the random
 
 Another great visual explanation at - https://stackoverflow.com/questions/1527803/generating-random-whole-numbers-in-javascript-in-a-specific-range
  */
+
+// Beautiful single line - remove Duplicates from array with ES6 Sets and Spread
+let removeDuplicatesFromArrAlt = arr => [...new Set(arr)];
+
+console.log(removeDuplicatesFromArrAlt([1,3,3,3,1,5,6,7,8,1]));
