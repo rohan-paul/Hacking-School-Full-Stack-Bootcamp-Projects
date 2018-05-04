@@ -11,101 +11,83 @@ function Node(value, next, prev) {
 
 //Adding Head Node;
 LinkedList.prototype.addToHead = function (value) {
-    var newNode = new Node (value, this.head, null);
+    var newNode = new Node(value, this.head, null);
 
     // If head is present add new node to head.prev
     if (this.head) {
         this.head.prev = newNode;
     } else {
         this.tail = newNode;
-    }  //else add new node to head because no head means no node in linked list
+    } //else add new node to head, because no head means no node in linked list
+
+    // Irrespective of whether head is present or not, we need to add newNode as head.
+    this.head = newNode;
 }
 
+LinkedList.prototype.addToTail = function (value) {
 
-// Add to Tail
-LinkedList.prototype.addToTail = function(value) {
+    var newNode = new Node(value, this.head, null);
 
-    let newNode = new Node(value, this.tail, null);
-
-    if(this.tail){
-        this.tail.next = newNode;
+    if (this.tail) {
+        this.tail.next = newNode; // if tail is present, then add newNode to be tail.next
+    } else {
+        this.head = newNode; // else add new node to head, becuse no tail means no node at all in the linked-list
     }
-    else {
-        this.head = newNode;
+    this.tail = newNode; // Irrespective of whether tail is present or not, we need to add newNode as tail which is the ultimate purpose of this function.
+}
+
+LinkedList.prototype.removeHead = function () {
+    if (!this.head) return null; // No head at all means its an empty list
+
+    // first assign a variable (handler) with the head value
+    let value = this.head.value;
+    this.head = this.head.next; // Then make the next node to be the head, as I will be removing the head.
+    if (this.head) {
+        this.head.prev = null; //If head is present (means head.next) remove head.prev value
+    } else {
+        this.tail = null;  //No head means no tail (empty list)
     }
+    return value;
+}
 
-    this.tail = newNode;
+LinkedList.prototype.removeTail = function () {
 
-};
+    if (!this.tail) return null; //No tail means empty list
 
-//Removing Head Node
+    // first assign a variable with the head value
+    let value = this.tail.value;
+    this.tail = this.tail.prev; //Move tail to tail.prev as I will be removing this tail
 
-LinkedList.prototype.removeHead = function(){
-
- if(!this.head) return null; //No head means empty list
-
- var val = this.head.value; //Just storing head value
-
- this.head=this.head.next; //Move head to head.next
-
- if(this.head) this.head.prev=null; //If head is present (means head.next) remove head.prev value
-
- else this.tail=null; //No head means no tail (empty list)
-
- return val;
-};
-
-LinkedList.prototype.removeTail = function(){
-
-    if(!this.tail){
-        return null;
+    if (this.tail) {
+        this.tail.next = null // If tail is present (means tail.prev) remove tail.next value
+    } else {
+        this.head = null; //No tail means no head (empty list)
     }
+    return value;
+}
 
-    let val = this.tail.value;
-
-    this.tail = this.tail.prev;
-
-    if(this.tail){
-        this.tail.next = null;
-    }
-    else {
-        this.head = null;
-    }
-
-    return val;
-
-};
-
-LinkedList.prototype.search = function(){
-
+LinkedList.prototype.search = function (searchValue) {
     let currentNode = this.head;
-
-    console.log('head node value is ' + currentNode.value);
-
-    while(currentNode.next){
+    while (currentNode) {
+        if (currentNode.value == searchValue) {
+            return currentNode.value;
+        }
         currentNode = currentNode.next;
-        if(currentNode === this.tail)
-            console.log('tail node value is ' + currentNode.value);
-        else
-            console.log('next node value is ' + currentNode.value);
     }
-
 };
 
-var ll = new LinkedList();
+ll = new LinkedList();
 
-ll.addToHead(100);
+ll.addToHead(300);
 
-ll.addToHead(200);
+ll.addToHead(400);
 
-ll.addToTail(300);
+ll.addToTail(200);
 
-ll.addToTail(400);
+ll.addToTail(100);
+
+// ll.removeHead();
+
+// ll.removeTail();
 
 console.log(ll);
-
-ll.removeHead();
-
-ll.removeTail();
-
-// console.log(ll);
