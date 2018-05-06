@@ -32,6 +32,3 @@ Stack.prototype.size = function () {
 }
 
 // Function to convert inFix to postFix
-Stack.prototype.convertPostFix = function () {
-    
-}
