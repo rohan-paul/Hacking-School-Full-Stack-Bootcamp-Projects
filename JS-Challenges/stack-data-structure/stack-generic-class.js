@@ -5,9 +5,17 @@ class Stack {
         this.data = [];
     }
 
-        pop () {
-          return this.data.pop();
-      }
+    pop()
+    {
+        // return top most element in the stack
+        // and removes it from the stack
+        // Underflow if stack is empty
+        if (this.data.length == 0) {
+            return "Underflow";
+        } else {
+        return this.data.pop();
+        }
+    }
 
         top () {
           return this.data.length;
@@ -42,7 +50,6 @@ class Stack {
                 }
             }
         }
-
   }
 
   // Parenthesis matching function to return true or false
