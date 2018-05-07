@@ -19,8 +19,6 @@ class Stack {
             }
         }
 
-
-
         // peek() method looks at the object at the top of this stack without removing it from the stack.  The stack is not modified (it does not remove the element; it only returns the element for information purposes).
 
         peek () {
@@ -68,7 +66,9 @@ class Stack {
         In the first case A - The first time I hit a closing parenthesis, the switch function will switch cases, through the 3 of them, and first will pop-out the "(" parenthesis - as the closing ")" will be matched.
         Then the next iteration will pop-out the straight bracket "[" - as that will be matched. And lastly the left over curly brace "{"
 
-        B> And in the case "{()}[]" - Its eazy to see theat the part "{()}" is same as the case-A above, and the part "[ ]" is obvious that the peek element will be the only possible matching element to pop out from the stack.
+        B> And in the case "{()}[]" - Its eazy to see that the part "{()}" is same as the case-A above, and the part "[ ]" is obvious that the peek element will be the only possible matching element to pop out from the stack.
+
+        And with the above code, third case, that this code will return false, is when although there are matched parenthesis
 
      */
         for (let i = 0; i < str.length; i++) {
