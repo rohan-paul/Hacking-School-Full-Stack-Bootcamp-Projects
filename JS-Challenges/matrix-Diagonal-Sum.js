@@ -62,7 +62,7 @@ C> And this way, for the last loop, I will be accessing array[(array.length - (l
 
 */
 
-function matrixDiagonalSums(matrix) {
+function matrixDiagonalDiff(matrix) {
 
     let diagonal1 = 0, diagonal2 = 0;
 
@@ -70,7 +70,8 @@ function matrixDiagonalSums(matrix) {
         diagonal1 += matrix[row][row];
         diagonal2 += matrix[row][matrix.length - row - 1];
     }
-    console.log(diagonal1 + ', ' + diagonal2);
+    // console.log(diagonal1 + ', ' + diagonal2);
+    return Math.abs(diagonal1 - diagonal2);
 }
 
 let myMatrix1 = [[20, 40], [10, 60]];
@@ -80,7 +81,7 @@ let myMatrix2 = [ [1, 2, 3], [4, 5, 6], [7, 8, 9] ];
 // matrixDiagonalSums(myMatrix2); // should output 15, 15
 
 // Suboptimal Solution in O(n^2)
-function matrixDiagonals(matrix) {
+function matrixDiagonalsDiff_alt(matrix) {
   let diagonal1 = 0, diagonal2 = 0;
 
   for (var i = 0; i < matrix.length; i++) {
@@ -95,6 +96,7 @@ function matrixDiagonals(matrix) {
       }
     }
   }
+  return Math.abs(diagonal1 - diagonal2);
 }
 
-  console.log(matrixDiagonalSums(myMatrix2));
+  console.log(matrixDiagonalDiff(myMatrix1));
