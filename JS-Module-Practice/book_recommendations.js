@@ -19,8 +19,7 @@ function getBooksRecommendations() {
         {id: 1, title: "The Road Ahead", author: "Bill Gates"},
         {id: 2, title: "The Stand", author: "Steven King"},
         {id: 3, title: "The Postman Always Rings Twice", author: "James M. Cain"}
-
-]
+    ]
 }
 
 module.exports.favoriteAuthor = favoriteAuthor;
