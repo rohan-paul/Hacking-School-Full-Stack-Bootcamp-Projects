@@ -4,17 +4,18 @@
 
 function isAnagram (s1, s2) {
 
-	let a = s1.toLowerCase().split('').sort().join('');
-	let b = s2.toLowerCase().split('').sort().join('');
+	// replace all non-alphanumeric char with empty space
+	let a = s1.replace(/[^\w]/, '').toLowerCase().split('').sort().join('');
+	let b = s2.replace(/[^\w]/, '').toLowerCase().split('').sort().join('');
 
 	console.log(a === b ? a + " and " + b + " are anagram" 
 					    : a + " and " + b + " are not anagram" );
 }
 
-// isAnagram('abc', 'cGa')
+isAnagram('abc', 'cGa')
 
 // single liner
-let isAnagram_alt = (s1, s2) => s1.toLowerCase().split('').sort().join('') === s2.toLowerCase().split('').sort().join('')
+let isAnagram_alt = (s1, s2) => s1.replace(/[^\w]/, '').toLowerCase().split('').sort().join('') === s2.replace(/[^\w]/, '').toLowerCase().split('').sort().join('')
 
 // console.log(isAnagram_alt('abc', 'cBa'));
 
@@ -54,4 +55,4 @@ function isAnagram_alt2 (s1, s2) {
 
 }
 
-console.log(isAnagram_alt2('abc', 'cGa'));
+// console.log(isAnagram_alt2('abc', 'cGa'));
