@@ -10,15 +10,19 @@ Check the code, by replacing single-space with a #
 
 A> KEY POINT - For each row, I am printing columns of values - first column prints ony "single space" and the second column prints "* + single space "
 
-B> The column-1's printing output goes on decreasing - Handle it by having the condition col2 < totalRows - thisRow
+B> The column-1's printing output goes on **decreasing** as the 'row' number increases - Handling it by having the condition col1 < totalRows - row .
 
-C> - and column-2's printing output goes on increasing - Handle it by doing col2 <= thisRow
+So for each row (which goes on increasing starting from zero), I am printing (totalRows - row) number of single-space form col1's loop.
+
+C> Column-2's printing output goes on **increasing** - Handle it by doing col2 <= row. So for each row, I am printing that many number of col2's output.
 
 D> For first line, i.e. for first loop >> print col-1's output 5 times and col-2's output 1 time.
 
 E> For second line - i.e. for second loop >> print col-1's output 4 times and col-2's output 2 times.
 
 F> For third line - i.e. for third loop >> print col-1's output 3 times and col-2's output 3 times.
+
+G> After the 2 for loops are done, reset the line back to an empty space, becuase the 2 for loops need to run again from zero postion for the next value or 'row' i.e. the next line.
 
 */
 

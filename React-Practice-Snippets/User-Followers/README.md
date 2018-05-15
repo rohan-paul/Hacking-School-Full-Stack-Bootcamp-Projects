@@ -1,4 +1,4 @@
-Implementation of a wrapper component (User) and under it 2 more component (Profile and Followers).
+Implementation of a wrapper component (User) and under it 2 more components (Profile and Followers).
 
 The structure of my components are like this
 
