@@ -1,19 +1,20 @@
-let users = [
-        {
-            id:1,
-            name: 'A',
-            followers: [2,3]
-        },
-        {
-            id:2,
-            name: 'B',
-            followers: [3]
-        },
-        {
-            id:3,
-            name: 'C',
-            followers: [1]
-        }
-    ];
+let users = {
+    content: {
+        followers : [
+          {
+            name: "Joe",
+            Age: 30,
+            id : 1007
+          },
+          {
+            name: "Bill",
+            Age: 35,
+            id : 1008
+          }
+        ]
+     }
+  };
 
-    console.log(users);
+  let keys = Object.keys(users.content);
+
+  console.log(keys);
