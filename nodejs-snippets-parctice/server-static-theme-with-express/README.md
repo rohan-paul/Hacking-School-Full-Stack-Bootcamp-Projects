@@ -1,0 +1,1 @@
+This small code will server the static theme templated-hielo (a frrely available template) template from the root route of my express server after starting the server.
