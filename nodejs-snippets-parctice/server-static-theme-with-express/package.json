@@ -12,6 +12,7 @@
     "express": "^4.16.3",
     "nodemon": "^1.17.4",
     "path": "^0.12.7",
-    "serve-index": "^1.9.1"
+    "serve-index": "^1.9.1",
+    "serve-static": "^1.13.2"
   }
 }
