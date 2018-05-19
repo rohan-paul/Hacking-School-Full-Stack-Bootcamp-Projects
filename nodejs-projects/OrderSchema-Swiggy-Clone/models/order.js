@@ -3,22 +3,11 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 let orderSchema = new Schema ({
-    customer: {
+    customerId: {
         type: String,
         required: true
     },
-    customerEmail: {
-        type: String
-    },
-    customerMobile: {
-        type: String,
-        required: true
-    },
-    driver: {
-        type: String,
-        required: true
-    },
-    driverMobile: {
+    driverId: {
         type: String,
         required: true
     },

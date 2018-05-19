@@ -13,24 +13,38 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.post('/', function (req, res) {
     var order = new Order();
-    user.name = req.body.name;
-    user.email = req.body.email;
 
-    user.save(function(err) {
+    order.customerId = req.body.customerId;
+    order.driverId = req.body.driverId;
+    order.orderItems = req.body.orderItems;
+    order.selectedRestaurant = req.body.selectedRestaurant;
+    order.createdAt = req.body.createdAt;
+    order.updatedAt = req.body.updatedAt;
+    order.deletedAt = req.body.deletedAt;
+    order.completed = req.body.completed;
+    order.specialInstructions = req.body.specialInstructions;
+
+    order.save(function(err) {
         if(err) throw err;
         res.json({"Status" : "Success"});
     });
 });
 
-
 app.put('/:id', function (req, res) {
-    User.findById(req.params.id, function(err, user) {
+    Order.findById(req.params.id, function(err, user) {
         if (err) throw err;
 
-            user.name = req.body.name;
-            user.email = req.body.email;
+        order.customerId = req.body.customerId;
+        order.driverId = req.body.driverId;
+        order.orderItems = req.body.orderItems;
+        order.selectedRestaurant = req.body.selectedRestaurant;
+        order.createdAt = req.body.createdAt;
+        order.updatedAt = req.body.updatedAt;
+        order.deletedAt = req.body.deletedAt;
+        order.completed = req.body.completed;
+        order.specialInstructions = req.body.specialInstructions;
 
-            user.save(function(err) {
+            order.save(function(err) {
                 if(err) throw err;
                 res.json(user);
             })
@@ -39,7 +53,7 @@ app.put('/:id', function (req, res) {
 })
 
 app.delete('/:id', function(req, res) {
-    User.remove({email: req.params.id}, function(err) {
+    Order.remove({email: req.params.id}, function(err) {
         if(err) {
             throw err;
         }
@@ -48,7 +62,7 @@ app.delete('/:id', function(req, res) {
 });
 
 app.get('/', function(req, res) {
-    User.find({}, function(err, users) {
+    Order.find({}, function(err, users) {
         if(err) throw err;
         res.json(users);
     });
