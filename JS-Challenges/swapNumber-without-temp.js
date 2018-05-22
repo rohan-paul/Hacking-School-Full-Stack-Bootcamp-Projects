@@ -60,10 +60,18 @@ A> https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitw
 
 B> XOR converts their operands to 32-bit integers (i.e. zeroes and ones), then perform their operations on such binary representations
 
-C> So in the above example > 2 and 4 in binary representation are 10 (which is same as 010) and 100 respectively. So a ^ b means 010 ^ 100 ie. ( 0 ^ 1 ) for first position then ( 1 ^ 0 ) for second position and ( 0 ^ 0 ) for the third position. Which gives "1 1 0" . So with the line of code a ^= b , I am assigning a's value to be "100" which is the decimal 6.
+C> So in the above example - 2 and 4 in binary representation are 10 (which is same as 010) and 100 respectively. So a ^ b means 010 ^ 100 ie.
+
+( 0 ^ 1 ) for first position then 
+
+( 1 ^ 0 ) for second position and 
+
+( 0 ^ 0 ) for the third position.
+
+Which gives the output as "1 1 0" . So with the line of code a ^= b , I am assigning a's value to be "100" which is the decimal 6.
 
 Then With the next line ( b^= a ) means 6 ^ 4 i.e. ( 110 ^ 100 ) giving me 010 which is 2
 
 And then finally with (a ^= b ) means 6 ^ 2 ie. ( 110 ^  010) giving me 100 which 4.
 
-* */
+*/
