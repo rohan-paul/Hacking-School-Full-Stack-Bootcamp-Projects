@@ -67,4 +67,17 @@ Our solution iterates the length of the input string, meaning that our time cost
     }, 0);
 }
 
-console.log(isBalancedParenthesis("({(()))}"));
+// console.log(isBalancedParenthesis("({(()))}"));
+
+
+// Solving with reduce() and using ES6
+
+function isBalanced([...str]) {return str.reduce((uptoPrevChar, thisChar) => {
+    ((thisChar === '(' && uptoPrevChar++ || thisChar === ')' && uptoPrevChar--)) &&
+    ((thisChar === '{' && uptoPrevChar++ || thisChar === '}' && uptoPrevChar--)) &&
+    ((thisChar === '[' && uptoPrevChar++ || thisChar === ']' && uptoPrevChar--));
+
+    return uptoPrevChar;
+}, 0) === 0 }
+
+console.log(isBalanced("((){}))"));
