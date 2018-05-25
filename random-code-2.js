@@ -1,20 +1,35 @@
-let users = {
-    content: {
-        followers : [
-          {
-            name: "Joe",
-            Age: 30,
-            id : 1007
-          },
-          {
-            name: "Bill",
-            Age: 35,
-            id : 1008
-          }
-        ]
-     }
-  };
+/* var promise = new Promise ((resolve, reject) => {
+  resolve();
+  reject();
+}) */
 
-  let keys = Object.keys(users.content);
+/* promise.then(() => {
+  console.log("hey I am");
+}).catch(() => {
+  console.log("Sorry it gave error");
+}); */
 
-  console.log(keys);
+/* promise.then(() => {
+  console.log("hey I am");
+}).then(() => {
+  console.log("The second then");
+}).catch(() => {
+  console.log("Sorry it gave error");
+}).then(() => {
+  console.log("The third then");
+}); */
+
+function func1() {
+	return {
+		func2: () => {
+      console.log("Inside func2");
+      return {
+        func3: () => {
+          console.log("Inside func3");
+        }
+      }
+		}
+	}
+}
+
+func1().func2().func3();
