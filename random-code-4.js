@@ -1,1 +1,4 @@
-let myUrl = 'https://github.com/rohan-paul'
+console.log(("(){}"));
+
+var arr = "(){}".split("");
+console.log(arr);
