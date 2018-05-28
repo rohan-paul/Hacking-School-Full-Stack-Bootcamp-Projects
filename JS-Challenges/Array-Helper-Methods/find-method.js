@@ -1,3 +1,23 @@
+/*find:
+
+callback is a predicate - it should return a truthy or falsy value
+callback answers: is this item what you’re looking for?
+callback gets these arguments: item, index, list
+final return value: the item you’re looking for, or undefined
+note: stops iterating once it receives a truthy value from your callback.
+example use case
+
+
+findIndex:
+
+callback is a predicate - it should return a truthy or falsy value
+callback answers: is this item what you’re looking for?
+callback gets these arguments: item, index, list
+final return value: the index of the item you’re looking for, or -1
+note: stops iterating once it receives a truthy value from your callback.
+example use case:*/
+
+
 // Examaple to find negaive number
 function findNegativeNum (elem) {
 	return elem < 0;
@@ -30,26 +50,16 @@ let myArr3 = [1, 2, 3, 4.4];
 // console.log(myArr3.findIndex(findNonNum)); // returns -1
 
 
-// Other example - traverses an array and inserts non-duplicate elements into a new array. That is, if an element is duplicated, then only insert that element once into the final newArray
+const objects = [{ id: 'a' }, { id: 'b' }, { id: 'c' }];
 
-function findNonDuplicates (array) {
-	let models = [];
-	for(var i = 0; i < array.length; i++) {
-    if(array.indexOf(array[i]) === i) {
-        models.push(array[i]);
-   		 }
-	}
-	return models;
-}
+const findIdWithb = objects.find((item) => {
+	return item.id === 'b'
+});
 
-let arr = [1, 2, 3, 4.4, 2];
-// console.log(findNonDuplicates((arr)));
+console.log(findIdWithb);
 
-// using filter
-function findNonDuplicatesFilter (array) {
-	return array.filter((elem, index, arr) => {
-		return array.indexOf(elem) === index;
-	})
-}
+const findIdIndexWithb = objects.findIndex((item) => {
+	return item.id === 'b'
+});
 
-console.log(findNonDuplicatesFilter(arr));
+console.log(findIdIndexWithb);

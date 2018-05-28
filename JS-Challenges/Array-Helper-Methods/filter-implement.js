@@ -33,4 +33,28 @@ console.log(jsTags);
 // Problem 2 with indexOf
 let jsTags2 = persons.filter((item) => (item.tags.indexOf("javascript") > -1));
 
-console.log(jsTags2);
+// console.log(jsTags2);
+
+// Other example - traverses an array and inserts non-duplicate elements into a new array. That is, if an element is duplicated, then only insert that element once into the final newArray
+
+function findNonDuplicates (array) {
+	let models = [];
+	for(var i = 0; i < array.length; i++) {
+    if(array.indexOf(array[i]) === i) {
+        models.push(array[i]);
+   		 }
+	}
+	return models;
+}
+
+let arr = [1, 2, 3, 4.4, 2];
+// console.log(findNonDuplicates((arr)));
+
+// using filter
+function findNonDuplicatesFilter (array) {
+	return array.filter((elem, index, arr) => {
+		return array.indexOf(elem) === index;
+	})
+}
+
+console.log(findNonDuplicatesFilter(arr));
