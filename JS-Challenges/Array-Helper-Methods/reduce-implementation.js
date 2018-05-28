@@ -1,3 +1,9 @@
+/* reduce() in my own understanding. reduce(callback,initialValue) takes in two parameters, callback function and initialValue. The callback function itself takes in 4 parameters, prev and next, index and array. You just need to know prev and next.
+
+prev refers to the first item in the array while next refers to the second item. But take note that if you pass in a initialValue, that prev will take on that initialValue and next will be the first value of the array.
+*/
+
+
 // Example 2:- return and array of unique tags from the below dataset
 
 var persons = [
