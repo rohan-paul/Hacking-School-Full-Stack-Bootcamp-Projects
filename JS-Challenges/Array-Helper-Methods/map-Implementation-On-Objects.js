@@ -47,4 +47,15 @@ let obj = arr.map((val, index, arr) => {
 		}
 	})
 
-console.log(obj);
+// console.log(obj);
+
+// Problem-2 - Using map() return full name  from the given array
+var oldArr = [{first_name:"Colin",last_name:"Toh"},{first_name:"Addy",last_name:"Osmani"},{first_name:"Yehuda",last_name:"Katz"}];
+
+let newArr = [];
+
+oldArr.map((item, index) => {
+	item.full_name = [item.first_name, item.last_name].join(' ');
+	return item;
+});
+console.log(oldArr);
