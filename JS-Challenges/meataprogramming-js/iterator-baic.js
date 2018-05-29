@@ -77,6 +77,7 @@ for (let hobby of person) {
 }
 
 /* Few points on the above implementation
+
 A> Note that the full person is an object, but I am only iterating over the 'hobbies' property.
 B> And the part, [Symbol.iterator] is itself a property of person object.
 C>
