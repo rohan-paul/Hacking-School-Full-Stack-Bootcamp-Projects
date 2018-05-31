@@ -17,7 +17,7 @@ C> Then iterate throught the Hash's key, and if I find any key's value to be fal
 
 */
 
-isPanagram = (str) => {
+isPangram = (str) => {
 
 	let alphabets = {};
 
@@ -40,4 +40,4 @@ isPanagram = (str) => {
 	return true;
 }
 
-console.log(isPanagram("The quick brown fox jumps over the lazy dog")); // should return true
+console.log(isPangram("The quick brown fox jumps over the lazy dog")); // should return true
