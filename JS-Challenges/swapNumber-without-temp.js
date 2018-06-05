@@ -1,3 +1,13 @@
+function swapTemp (a, b) {
+  console.log('before swap: ', 'a: ', a, 'b: ', b);
+  let temp = a;
+  a = b;
+  b = temp;
+  console.log('after swap: ', 'a: ', a, 'b: ', b);
+}
+
+// swapTemp(2, 3);
+
 /*
 Swap 2 numbers 4 different ways*/
 /*swap number without temp*/
@@ -14,7 +24,7 @@ function swapNumber2(a, b) {
   console.log('before swap: ', 'a: ', a, 'b: ', b);
   a = a * b;
   b = a / b;
-  a /= b;
+  a = a / b;
   console.log('after swap: ', 'a: ', a, 'b: ', b);
 }
 // swapNumber2(2, 4);
@@ -31,7 +41,7 @@ function swapNumber4(a, b) {
   a = b + (b = a, 0);
   console.log('after swap: ', 'a: ', a, 'b: ', b);
 }
-swapNumber4(34, 584);
+// swapNumber4(34, 584);
 
 /*How the above swapNumber4() works:
   (b=a, 0) sets b to a and yields 0
@@ -62,9 +72,9 @@ B> XOR converts their operands to 32-bit integers (i.e. zeroes and ones), then p
 
 C> So in the above example - 2 and 4 in binary representation are 10 (which is same as 010) and 100 respectively. So a ^ b means 010 ^ 100 ie.
 
-( 0 ^ 1 ) for first position then 
+( 0 ^ 1 ) for first position then
 
-( 1 ^ 0 ) for second position and 
+( 1 ^ 0 ) for second position and
 
 ( 0 ^ 0 ) for the third position.
 

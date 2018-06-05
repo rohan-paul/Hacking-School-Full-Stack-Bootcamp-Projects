@@ -1,14 +1,14 @@
-var api = {
-    _apiKey: '123abc456def',
-    /* mock methods that use this._apiKey */
-    getUsers: function(){},
-    getUser: function(userId){},
-    setUser: function(userId, config){}
-  };
+// print fibonacci series
 
-  // logs '123abc456def';
-  console.log("An apiKey we want to keep private", api._apiKey);
+var output = "0 1";
 
-  // get and mutate _apiKeys as desired
-  var apiKey = api._apiKey;
-  api._apiKey = '987654321';
+let fibonacciUptoNumber= 5, fibNum = 0, nextHigherNum = 1; sum=0;
+
+for (let i = 2; i <= fibonacciUptoNumber; i++) {
+  sum = fibNum + nextHigherNum;
+  fibNum = nextHigherNum;
+  nextHigherNum = sum;
+  output += " " + sum;
+}
+
+console.log(output);

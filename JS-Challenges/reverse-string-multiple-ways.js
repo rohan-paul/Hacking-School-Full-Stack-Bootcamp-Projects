@@ -8,6 +8,14 @@ function reverseString(str) {
 
 // console.log(reverseString("hello"));
 
+
+function reverseStringRecursive(str) {
+  if (str === "") {
+    return "";
+  } else {
+    return reverseStringRecursive(str.substr(1) + str.charAt(0));
+  }
+}
 /*2-nd Approach - Using Recursion.
 A> Per the standard mechanism of recursion, for the single line of code, where I am calling the same function, I will not have a single code to execute, but several nested calls that will stack up with each call. And the end of that line's execution, it will just return the top most nested call in the stack.
 B> With each recursive call the stack will build up as below..
@@ -21,14 +29,6 @@ recursionStringReverse('hello')
 
 That's it, terminal case reached and the most highly nested call returns immediately, which is the last line above
 */
-function reverseStringRecursive(str) {
-  if (str === "") {
-    return "";
-  } else {
-    return reverseStringRecursive(str.substr(1) + str.charAt(0));
-  }
-}
-
 //Alternative-3-Using temporary variable
 /* The substring() method extracts the characters in a string between "start" and "end", not including "end" itself. Start is position (i.e. index number) where to start the extraction. First character is at index 0 */
 

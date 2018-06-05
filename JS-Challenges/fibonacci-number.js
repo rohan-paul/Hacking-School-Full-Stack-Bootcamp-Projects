@@ -53,6 +53,45 @@ A simple way is to generate Fibonacci numbers until the generated number is grea
 A number is Fibonacci if and only if one or both of (5*n2 + 4) or (5*n2 – 4) is a perfect square (Source: Wiki). Following is a simple program based on this concept.
 */
 
+function fibonacciIterative (num) {
+    let a = 0, b = 1, f = 1;
+    for (let i = 2; i <= num; i++) {
+        f = a + b;
+        a = b;
+        b = f;
+    }
+    return f;
+}
+
+// console.log(fibonacciIterative(5));
+
+// Return the fibonacci iterative
+function fibonacciIterativeAlt (num) {
+    let [a, b] = [1, 0];
+
+    while (--num > 0) {
+        [a, b] = [a+b, a ]
+    }
+    return a;
+}
+// console.log(fibonacciIterativeAlt(5));
+/* Explanation -  The two numbers a and b are initialized as 1 and 0, and in every iteration of the loop (counting backwards from n to 0), a becomes the sum of the two numbers and the lower number b becomes the previous value of the higher number a. When n reaches 0, the lower of the two numbers is returned and, it resolves to the nth number in the Fibonacci sequence. */
+
+// print fibonacci series
+
+var output = "0 1";
+
+let fibonacciUptoNumber= 5, fibNum = 0, nextHigherNum = 1; sum=0;
+
+for (let i = 2; i <= fibonacciUptoNumber; i++) {
+  sum = fibNum + nextHigherNum;
+  fibNum = nextHigherNum;
+  nextHigherNum = sum;
+  output += " " + sum;
+}
+
+// console.log(output);
+
 function isPerfectSquare (num) {
 
     let squareRoot = Math.sqrt(num);
@@ -80,4 +119,4 @@ function printIfFibonacci (num) {
     }
 }
 
-printIfFibonacci(10);
+// printIfFibonacci(10);
