@@ -13,6 +13,7 @@ var app = express();
 app.use('/', express.static(__dirname + '/public/templated-hielo'))
 
 // If the entry file to my app is home.html rather than index.html then use the below code, invoking the option for index - to make it work. Note, express will by default take index.html
+
 // app.use('/', express.static(__dirname + '/public/templated-hielo', {index: 'home.html'}))
 
 
