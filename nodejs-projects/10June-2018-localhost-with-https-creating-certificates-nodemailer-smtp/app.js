@@ -1,3 +1,20 @@
+/*Here, I am implementing nodemailer to send automatied emails
+1> First create an smtp mail (here I have used from another person - which is
+user: "ths@aadaranango.org",
+pass: "CVCvM?FwUzLU")
+
+2> Because I dont have a TLS (TLS is a successor to Secure Sockets Layer protocol, or SSL.) certificate - so to start the server, I have run the below command - 
+
+NODE_TLS_REJECT_UNAUTHORIZED=0 nodemon app.js
+
+3> Then go to Postman and send the POST request from route - http://localhost:3000/  - then in the running terminal I will get as below
+
+Message sent: <1a08d237-2983-7c1e-e532-02b680791a29@mail.com>
+Preview URL: false
+
+And in my gmail (the one I have mentioned in mailOptions) I will get the email (check spam folder as well)
+*/
+
 var express = require("express");
 const nodemailer = require("nodemailer");
 var bodyParser = require("body-parser");
