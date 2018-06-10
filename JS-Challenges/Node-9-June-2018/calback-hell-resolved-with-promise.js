@@ -50,9 +50,9 @@ addOneToNumPromise(5)
 
 /* A promise is an object that is returned immediately but the result arrives later in future. Promise takes a method with two arguments, resolve and reject. resolve is called when we have a result and reject is called when we have an error. This promise object returned has two methods, then and catch. then gets the result which was raised through the resolve method. catch gets the error thrown with the reject method. Using promises we can chain our asynchronous call in a synchronous manner. */
 
-addOneToNumPromise(5)
+/* addOneToNumPromise(5)
     .then(res1 => {
-        return addOneToNumPromise(res1);
+        return addOneToNumPromise(res1)
     })
     .then(res2 => {
         return addOneToNumPromise(res2)
@@ -65,11 +65,10 @@ addOneToNumPromise(5)
     })
     .then(res5 => {
         console.log(res5);
-    })
+    }) */
 
 
-// More compact way to write the above code
-
+// More compact version of the above
 /*
 addOneToNumPromise(5)
     .then(res1 => addOneToNumPromise(res1))
@@ -78,3 +77,11 @@ addOneToNumPromise(5)
     .then(res4 => addOneToNumPromise(res4))
     .then(res5 => console.log(res5));
 */
+
+// Even more compact version and what a great beauty
+addOneToNumPromise(5)
+    .then(addOneToNumPromise)
+    .then(addOneToNumPromise)
+    .then(addOneToNumPromise)
+    .then(addOneToNumPromise)
+    .then(console.log);
