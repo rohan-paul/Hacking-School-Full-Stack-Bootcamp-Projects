@@ -31,7 +31,7 @@ function matrixAddition1 (arr1, arr2) {
   }
   return result;
 }
-console.log(matrixAddition1([ [1, 2, 3], [3, 2, 1], [1, 1, 1] ], [ [2, 2, 1], [3, 2, 3], [1, 1, 3] ] ));
+// console.log(matrixAddition1([ [1, 2, 3], [3, 2, 1], [1, 1, 1] ], [ [2, 2, 1], [3, 2, 3], [1, 1, 3] ] ));
 
 /* [ [1, 2, 3]
      [3, 2, 1]
@@ -42,7 +42,7 @@ console.log(matrixAddition1([ [1, 2, 3], [3, 2, 1], [1, 1, 1] ], [ [2, 2, 1], [3
       [3, 2, 3]
       [1, 1, 3]
     ]
-   */
+*/
 
 // Alternative-2, same approach as above, and very much equivalent to Alternative-1
 
@@ -61,7 +61,7 @@ matrixAddition2 = (arr1, arr2) => {
   return result;
 }
 
-console.log(matrixAddition2([ [1, 2, 3], [3, 2, 1], [1, 1, 1] ], [ [2, 2, 1], [3, 2, 3], [1, 1, 3] ] ));
+// console.log(matrixAddition2([ [1, 2, 3], [3, 2, 1], [1, 1, 1] ], [ [2, 2, 1], [3, 2, 3], [1, 1, 3] ] ));
 
 
 // Alternative-3, same approach at alternative-1
@@ -82,7 +82,7 @@ function matrixAddition3 (arr1, arr2) {
   return result;
 }
 
-console.log(matrixAddition3([ [1, 2, 3], [3, 2, 1,], [1, 1, 1] ], [ [2, 2, 1], [3, 2, 3], [1, 1, 3] ] ));
+// console.log(matrixAddition3([ [1, 2, 3], [3, 2, 1,], [1, 1, 1] ], [ [2, 2, 1], [3, 2, 3], [1, 1, 3] ] ));
 
 /* Further notes on the above
 A> First, I am looping through the first depth of the outer 2dArray arr1, which values are also arrays.
@@ -90,13 +90,67 @@ B> The first argument numItem in arr1.forEach is the value of the current index 
 C> We can use index1 to reference the corresponding inner array on 2dArray arr2 from the inner iteration arrItem.forEach and use the arrItem.forEach index argument which I labeled index2 to reference the numbers in 2dArray b by reading arr2[index1][index2].
 */
 
-// The most concise mechanism using .map function
+// The most concise mechanism using .map function - And this is the best practice
 function matrixAddition4 (arr1, arr2) {
   return arr1.map((n, i) => {
-    return n.map(function(o, j) {
+    return n.map((o, j) => {
+      console.log(o);
       return o + arr2[i][j];
     });
   });
 }
 
-console.log(matrixAddition4([ [1, 2, 3], [3, 2, 1,], [1, 1, 1] ], [ [2, 2, 1], [3, 2, 3], [1, 1, 3] ] ));
+// In the above, the 'o' variable is the each numeric element from the first array and arr2[i][j] is each number element of the arr2
+
+// console.log(matrixAddition4([ [1, 2, 3], [3, 2, 1,], [1, 1, 1] ], [ [2, 2, 1], [3, 2, 3], [1, 1, 3] ] ));
+
+
+/* [ [1, 2, 3]
+     [3, 2, 1]
+     [1, 1, 1]
+    ],
+
+    [ [2, 2, 1]
+      [3, 2, 3]
+      [1, 1, 3]
+    ]
+*/
+matrixAddition5 = (arr1, arr2) => {
+
+  let result = [];
+
+  arr1.forEach((arrElem, index1) => {
+    result.push(arrElem.reduce((sums, numElem, index2) => {
+      console.log(sums);
+      return (sums.concat(numElem + arr2[index1][index2]))
+    }, [] ))
+  })
+  return result;
+}
+
+/*
+A> With Array.reduce we just need to keep in mind the signature change which becomes (callback, initialValue) where callback is our function to run against each value of array arrElem and the callback has parameters (previousValue, currentValue, currentIndex, array)
+
+The forEach() - here its callback works on the element of the outer array, each callback is applied on an array itself.
+
+And the reduce() - here its callback works on each element of the inner array, hence the callback is applied on individual numbers.
+
+B> Here for the reduce() function the initial value of sums is an empty array.
+
+C) So the concat() method above is almost working like a push() .
+
+D) the concat() is being invoked on each addition of the number elements from each of the nested inner array.
+
+E) And only after all the
+
+Here's how its working here with each iteration on the first element of the outer array.
+
+[].concat(1+2)  // [3]
+[3].concat(2 + 2) // [3, 4]
+[3, 4].concat(3 + 1) // [3, 4, 4]
+
+And once this first element of the outer array is executed, it pushes the final concatenated array to 'result' variable and moves to the next inner array numbers.
+
+ */
+
+console.log(matrixAddition5([ [1, 2, 3], [3, 2, 1,], [1, 1, 1] ], [ [2, 2, 1], [3, 2, 3], [1, 1, 3] ] ));
