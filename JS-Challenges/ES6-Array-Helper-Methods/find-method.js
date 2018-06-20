@@ -1,4 +1,6 @@
-/*find:
+/*
+
+find () - arguments explanation
 
 callback is a predicate - it should return a truthy or falsy value
 callback answers: is this item what you’re looking for?
