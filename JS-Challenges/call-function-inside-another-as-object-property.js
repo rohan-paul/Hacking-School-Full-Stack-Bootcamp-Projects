@@ -21,12 +21,12 @@ Where http is an object, and I am chaining createServer() and listen() to that
 function func1() {
 	return {
 		func2: () => {
-      console.log("Inside func2");
-      return {
-        func3: () => {
-          console.log("Inside func3");
-        }
-      }
+			console.log("Inside func2");
+			return {
+				func3: () => {
+					console.log("Inside func3");
+				}
+			}
 		}
 	}
 }
