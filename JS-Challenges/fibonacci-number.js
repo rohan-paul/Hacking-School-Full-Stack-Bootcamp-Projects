@@ -41,7 +41,7 @@ function fibonacci (n) {
     }
 }
 
-// console.log(fibonacci(7));
+// console.log(fibonacci(10));
 
 /* In the above function, in the 5th line the function is transferring execution to itself by passing parameters that will result in a value.
 To ensure that a recursive function doesn't turn into an endless loop, there must be some sort of condition that doesn't call itself. */
@@ -57,29 +57,43 @@ A simple way is to generate Fibonacci numbers until the generated number is grea
 A number is Fibonacci if and only if one or both of (5*n2 + 4) or (5*n2 – 4) is a perfect square (Source: Wiki). Following is a simple program based on this concept.
 */
 
+
+// Same as above, using ternary operater - AND THIS IS THE STANDARD SOLUTION
+fibonacci1 = (n) => {
+
+    let fibSeries = [];
+    
+    return n < 1 ? 0
+         : n < 2 ? 10
+         : fibonacci(n - 1) + fibonacci1(n - 2)
+}
+
+// console.log(fibonacci1(10));
+
+
 // Problem Statement-2 - Find the n-th fibonacci number iteratively
 function fibonacciIterative (num) {
     let a = 0, b = 1, f = 1;
     for (let i = 2; i <= num; i++) {
         f = a + b;
-        a = b;
         b = f;
+        a = f - a;  // At this step I had to lift up b to make it equeal to a. But now a has become (a+b). Hence the deduction by 'b' i.e b = f - b
     }
     return f;
 }
 
-// console.log(fibonacciIterative(5));
+// console.log(fibonacciIterative(10));
 
-// Problem Statement-3 - Find the n-th fibonacci number iteratively (using ES6 destructuring)
+// Problem Statement-3 - Find the n-th fibonacci number iteratively (using ES6 destructuring) - EXACTLY SAME APPROACH AS ABOVE
 function fibonacciIterativeAlt (num) {
-    let [a, b] = [1, 0];
+    let [a, b] = [0, 1];
 
     while (--num) {
-        [a, b] = [a+b, a ]
+        [a, b] = [b, b + a ]
     }
-    return a;
+    return b;
 }
-// console.log(fibonacciIterativeAlt(5));
+// console.log(fibonacciIterativeAlt(10));
 
 /* Explanation of the above -  The two numbers a and b are initialized as 1 and 0, and in every iteration of the loop (counting backwards from n to 0), a becomes the sum of the two numbers ( its current value and prrevious value of the series ) and the lower number b becomes the previous value of the higher number a. When n reaches 0, the lower of the two numbers is returned and, it resolves to the nth number in the Fibonacci sequence. 
 
@@ -94,11 +108,11 @@ FibNumber =     1   1   2   3   5   8   13  21  34  55
 
 GOOD STANDARD SOLUTION-Refer to this for general implementation - (following the same approach as above solution) - 
 */
-function fibSeries (num) {
+function printFibSeries (num) {
 
     const fibSequence = [1];
 
-    let currentElem = 1, prevElem = 0;
+    let currentElem = 1, prevElem = 0; // The final Fib series here will be starting with zero 
 
     if (num === 1) {
         return fibSequence;
@@ -108,14 +122,18 @@ function fibSeries (num) {
 
     while (iterationCounter) {
         currentElem = currentElem + prevElem;
-        prevElem = currentElem - prevElem;
+
+        prevElem = currentElem - prevElem;  
+        // At this step I had to lift up prevElem to make it equeal to currElem. But now currentElem has become (currentElem + prevElem). Hence the deduction by 'prevElem' i.e prevElem = currentElem - prevElem;  
+
         fibSequence.push(currentElem);
-        iterationCounter -= 1;
+
+        iterationCounter--;
     }
     return fibSequence;
 }
 
-console.log(fibSeries(10));
+console.log(printFibSeries(10));
 
 /* In the above, explanation on why I am looping upto (num - 1) and NOT upto num - 
 A) For finding the 10the fibonacci number I am running the while loop 9 times, because, the first value of the fibSeries is already set to be 1 - which I am implementing by initializing the fibSequence array as [1] and NOT an empty array
@@ -129,7 +147,7 @@ C) So after setting the first postion to be 1, I am left with 9 more position to
 
 D) Just to check if I initialize the fibSequence to be an empty array [] and then run the loop 10 times (i.e. iterationCounter = num ) then I will get the below result.
 
-[ 1, 2, 3, 5, 8, 13, 21, 34, 55, 89 ] which brings the 11th Fib series no 89 to the 10-th position - which is incorrect.
+[ 1, 2, 3, 5, 8, 13, 21, 34, 55, 89 ] which brings the 11th Fib series no 89, to the 10-th position - which is incorrect.
 
 
 Inside the while loop, while I am setting the values for both the curentElem and prevElem. But to the array, I am pushing only the value of the currentElement. 
@@ -137,20 +155,29 @@ And the prevElem can only reach upto 0 i.e so, I have to stop when current value
 
 //******************************************
 
+// PROBLEM STATEMENT - PRINT FIB SERIES UPTO A NUMBER (i.e. upto the 10th fib number)
+
+
+
 // print fibonacci series upto a specified number
 
 var output = "0 1";
 
-let fibonacciUptoNumber= 5, fibNum = 0, nextHigherNum = 1; sum=0;
+let maxFibumber= 10, fibNum = 1, smallerNum = 0; sum=0;
 
-for (let i = 2; i <= fibonacciUptoNumber; i++) {
-  sum = fibNum + nextHigherNum;
-  fibNum = nextHigherNum;
-  nextHigherNum = sum;
-  output += " " + sum;
+for (let i = 2; i <= maxFibumber; i++) {
+
+  sum = smallerNum + fibNum;
+
+  fibNum = sum;
+
+  smallerNum = sum - smallerNum;
+
+  output += " " + fibNum;
 }
 
-// console.log(output);
+// console.log(output); 
+// => 0 1 1 2 3 5 8 13 21 34 55
 
 
 
