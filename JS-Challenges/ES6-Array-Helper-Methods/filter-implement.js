@@ -13,7 +13,7 @@ for (let i = 0; i < numberArray.length; i++) {
 
 let evenNumbersWithFilter = numberArray.filter((item) => (item % 2 === 0));
 
-console.log(evenNumbersWithFilter);
+// console.log(evenNumbersWithFilter);
 
 
 // Problem 2:- Filter objects with tags javascript
@@ -28,7 +28,7 @@ var persons = [
 
 let jsTags = persons.filter((item) => (item.tags === "javascript"))
 
-console.log(jsTags);
+// console.log(jsTags);
 
 // Problem 2 with indexOf
 let jsTags2 = persons.filter((item) => (item.tags.indexOf("javascript") > -1));
@@ -57,4 +57,12 @@ function findNonDuplicatesFilter (array) {
 	})
 }
 
-console.log(findNonDuplicatesFilter(arr));
+// console.log(findNonDuplicatesFilter(arr));
+
+// Write a function that returns the number of zeros in a given array?
+noOfZeros = arr => {
+	return arr.filter(zero => (zero === 0)).length 
+}
+
+console.log(noOfZeros([1, 2, 0, 0, 5]));
+

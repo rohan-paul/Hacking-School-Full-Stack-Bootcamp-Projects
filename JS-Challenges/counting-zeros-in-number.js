@@ -10,7 +10,7 @@ function countZero (num) {
 
   let counter = 0;
 
-  while (num > 0) {
+  while (num) {
 
     counter += Math.floor(num / 10);
 
