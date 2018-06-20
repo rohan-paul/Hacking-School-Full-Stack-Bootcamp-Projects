@@ -14,6 +14,13 @@ removeDupCharFromStr = (str) => {
 
 // console.log(removeDupCharFromStr("Rohaaan"));
 
+// More compact solution to remove duplicated char from str with ES6 Set
+removeDupWordsFromStr_1 = (str) => {
+  return [...new Set([...str])].join('');
+}
+
+console.log(removeDupWordsFromStr_1("Rohaaan"));
+
 
 // Remove duplicate words from string separated by a comma and a space and return the string containing only unique words - the below solution will NOT remove duplicate characters from a string, its only for words.
 
@@ -32,4 +39,7 @@ removeDupWordsFromStr = (str) => {
   return Array.from(new Set(str.split(','))).toString();
 }
 
-console.log(removeDupWordsFromStr("spanner, span, spaniel, span"));
+// console.log(removeDupWordsFromStr("spanner, span, spaniel, span"));
+
+
+
