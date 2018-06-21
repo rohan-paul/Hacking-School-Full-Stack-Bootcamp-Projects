@@ -15,9 +15,6 @@ PROBLEM STATEMENT AT TECHOLUTION - write a program to find the sum of 9s compl
 
 Example; input = 104
 output = 22
-
-
-
 */
 
 nineComplementSum = num => {
@@ -27,6 +24,12 @@ nineComplementSum = num => {
   let nineComplementNum = [];
 
   for (let i in numStrArr) {
-    nineComplementNum.push()
+    nineComplementNum.push(9 - parseInt(numStrArr[i]) );
   }
+
+  return nineComplementNum.reduce((accum, currentItem) => {
+    return accum + currentItem;
+  }, 0)
 }
+
+console.log(nineComplementSum(104));
