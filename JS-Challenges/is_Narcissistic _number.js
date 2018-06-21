@@ -26,6 +26,15 @@ isNarcissistic = num => {
   return num === narcissisticResult;
 }
 
-console.log(isNarcissistic(153));
+// console.log(isNarcissistic(153));
 
 // 153 is Nacrissistic number - (3 digits), you can see 153 = 1^3 + 5^3 + 3^3
+
+// Alternate Solution
+isNarcissistic1 = num => {
+  return num === (num.toString().split('').reduce((narcissisticResult, currentNum) => {
+      return narcissisticResult + Math.pow(parseInt(currentNum), num.toString().length)
+  }, 0))
+}
+
+console.log(isNarcissistic1(153));
