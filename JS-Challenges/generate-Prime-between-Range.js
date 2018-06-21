@@ -20,9 +20,13 @@ console.log(isPrime(8));
 
 generatePrime = (a, b) => {
 
+  // in case the range is given in the format whre large no is first and then the small no
+  let start = ( a <= b ) ? a : b;
+  let end = ( b > a ) ? b : a;
+
   primes = []
 
-  for (let i = a; i <= b; i++) {
+  for (let i = start; i <= end; i++) {
     if(isPrime(i)) {
       primes.push(i);
     }
