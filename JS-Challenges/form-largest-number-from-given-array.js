@@ -19,3 +19,9 @@ largestNum = arr => {
 }
 
 console.log(largestNum([3, 30, 34, 5, 9])); // => 9534330
+
+/* Explanation of the part < sort((a, b) => (b+a) - (a+b)) >
+
+
+
+*/
