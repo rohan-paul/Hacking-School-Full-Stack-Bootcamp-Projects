@@ -1,4 +1,4 @@
-/* Write a 'balancedParenthesis' function that takes a string as input and returns a boolean — if the parentheses in the input string are 'balanced', then return true, else return false 
+/* Write a 'balancedParenthesis' function that takes a string as input and returns a boolean — if the parentheses in the input string are 'balanced', then return true, else return false
 
 Two brackets are considered to be a matched pair if the an opening bracket (i.e., (, [, or { ) occurs to the left of a closing bracket (i.e., ), ], or }) of the exact same type.
 
@@ -50,9 +50,9 @@ let isMatchingBrackets = function (str) {
     return true;
 }
 
-console.log(isMatchingBrackets("(){}")); // returns true
-console.log(isMatchingBrackets("[{()()}({[]})]({}[({})])((((((()[])){}))[]{{{({({({{{{{{}}}}}})})})}}}))[][][]")); // returns true
-console.log(isMatchingBrackets("({(()))}}"));  // returns false
+// console.log(isMatchingBrackets("(){}")); // returns true
+// console.log(isMatchingBrackets("[{()()}({[]})]({}[({})])((((((()[])){}))[]{{{({({({{{{{{}}}}}})})})}}}))[][][]")); // returns true
+// console.log(isMatchingBrackets("({(()))}}"));  // returns false
 
 
 //Alternate-2
@@ -105,7 +105,7 @@ Our solution iterates the length of the input string, meaning that our time cost
 
  */
 let isBalancedParenthesis = (str) => {
-    
+
     return !str.split('').reduce((uptoPrevChar, thisChar) => {
         if(thisChar === '(' || thisChar === '{' || thisChar === '[' ) {
             return ++uptoPrevChar;
@@ -136,3 +136,35 @@ function isBalanced([...str]) {return str.reduce((uptoPrevChar, thisChar) => {
 // console.log(isBalanced("[()]{}{[()()]()}"));  // returns true
 // console.log(isBalanced("[{()()}({[]})]({}[({})])((((((()[])){}))[]{{{({({({{{{{{}}}}}})})})}}}))[][][]"));  // returns true
 // console.log(isBalanced("({(()))}"));
+
+/* ALTERNATIVE - 3
+PROBLEM STATEMENT - isBalancedBraces - Takes a string and returns true or false indicating whether its curly braces are balanced.
+
+isBalanced('}{')                      // false
+isBalanced('{{}')                     // false
+isBalanced('{}{}')                    // true
+isBalanced('foo { bar { baz } boo }') // true
+isBalanced('foo { bar { baz }')       // false
+isBalanced('foo { bar } }')
+
+*/
+
+isBalancedBraces = str => {
+    let count = 0;
+
+    for (let i of str) {
+        if (i === "{") count++;
+        else if ( i === "}") count--;
+
+        // Noting from the first test-case it looks like that if a closing curly brace is first encountered, then my function should return 'false'. So as soon as I have a negative value of count, I should return false.
+        if (count < 0) return false;
+    }
+    return count === 0;
+}
+
+console.log(isBalancedBraces('}{'))                      // false
+console.log(isBalancedBraces('{{}'))                        // false
+console.log(isBalancedBraces('{}{}'))                   // true
+console.log(isBalancedBraces('foo { bar { baz } boo }')) // true
+console.log(isBalancedBraces('foo { bar { baz }'))       // false
+console.log(isBalancedBraces('foo { bar } }'))           // false
