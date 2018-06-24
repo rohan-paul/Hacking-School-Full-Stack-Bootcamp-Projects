@@ -30,5 +30,3 @@ Stack.prototype.pop = function() {
 Stack.prototype.size = function () {
     return this.count;
 }
-
-// Function to convert inFix to postFix
