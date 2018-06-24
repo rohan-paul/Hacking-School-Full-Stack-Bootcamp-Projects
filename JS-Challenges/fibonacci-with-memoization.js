@@ -53,7 +53,7 @@ fibonacciMemoization = num => {
     // If the result for the input `num` is already on the resultsCache
     // we will use it instead of executing the whole algorithm
     if (resultsCache[num] !== undefined ) {
-      console.log(resultsCache[num]);
+      // console.log(resultsCache[num]);
       result = resultsCache[num];
     }
     else {
@@ -76,3 +76,5 @@ let endTime2 = Date.now();
 
 console.log('Elapsed Time ' + (endTime2 - startTime2) + 'ms');;
 console.log('Calculated Fibonacci ' + timesCalculatedMemoization + ' times');
+
+// For understanding the above, also see caching_function.js execution

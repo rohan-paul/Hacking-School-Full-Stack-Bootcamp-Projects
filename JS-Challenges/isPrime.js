@@ -10,7 +10,7 @@ isPrime1 = num => {
   let maxNumToCheckForPrimeness = Math.sqrt(num);
 
   for (let i = 2; i <= maxNumToCheckForPrimeness; i++ )
-  if (num % i === 0) { return false };
+    if (num % i === 0) { return false };
   return true;
 }
 
