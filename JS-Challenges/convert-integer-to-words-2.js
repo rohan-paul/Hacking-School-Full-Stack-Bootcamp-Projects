@@ -51,7 +51,7 @@ numToWord = num => {
       finalWord += ( num > 50 ? ('Fifty-' + words[num - 50]) : 'Fifty' )
     }
     else if ((num >= 60 && num < 70)) {
-      finalWord += ( num > 60 ? ('Sixty-' + words[num - 60]) : 'Sixy' )
+      finalWord += ( num > 60 ? ('Sixty-' + words[num - 60]) : 'Sixty' )
     }
     else if ((num >= 70 && num < 80)) {
       finalWord += ( num > 70 ? ('Seventy-' + words[num - 70]) : 'Seventy' )

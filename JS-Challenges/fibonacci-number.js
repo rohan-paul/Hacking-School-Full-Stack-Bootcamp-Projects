@@ -180,7 +180,10 @@ for (let i = 2; i <= maxFibumber; i++) {
 // => 0 1 1 2 3 5 8 13 21 34 55
 
 
+/* Problem STATEMENT - heck if a given number is Fibonacci number
 
+FORMULAE - A number is Fibonacci if and only if one or both of (5*n2 + 4) or (5*n2 – 4) is a perfect square
+*/
 
 function isPerfectSquare (num) {
 

@@ -2,6 +2,7 @@
 
 isPrime = (num) => {
 
+	// Treaditionally/Conventionally prime number starts from 2
   if (isNaN(num) || !isFinite(num) || num % 1 || num < 2) {
     return false;
   }
