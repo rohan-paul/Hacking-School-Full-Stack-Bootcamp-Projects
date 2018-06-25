@@ -72,6 +72,3 @@ atoi_crude = str => {
 
   return isNaN(finalInteger) ? 0 : finalInteger;
 }
-
-
-// More exhaustive version
