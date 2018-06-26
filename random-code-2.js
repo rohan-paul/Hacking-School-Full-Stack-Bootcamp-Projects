@@ -1,3 +1,14 @@
-console.log([...Array(5).keys()].slice(2).map(i => 5 % i));
+let obj = {
+	"a": 1,
+	"b": 2,
+	"c": 3
+}
 
-// console.log(!( 5 % 4) === false);
+
+console.log('a' in obj); //true
+
+console.log('toString' in obj); //true
+
+console.log(obj.hasOwnProperty('a')); //true
+
+console.log(obj.hasOwnProperty('toString')); //false
