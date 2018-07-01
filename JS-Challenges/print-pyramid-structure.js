@@ -22,15 +22,17 @@ E> For second line - i.e. for second loop >> print col-1's output 4 times and co
 
 F> For third line - i.e. for third loop >> print col-1's output 3 times and col-2's output 3 times.
 
-G> After the 2 for loops are done, reset the line back to an empty space, because the 2 for loops need to run again from zero position for the next value or 'row' i.e. the next line.
+G> After the 2 for loops are done, line is automatically getting reset back to an empty space, because I am initiating the ilne variable after launching the very first for loop.
+
+And the resetting of line is required because, the 2 for loops need to run again from zero position for the next value or 'row' i.e. the next line.
 
 */
 
 function pyramid (totalRows) {
 
-    let line = '';
-
     for (let row = 0; row < totalRows; row++ ) {
+
+        let line = '';
 
         // loop for first column-1 where I will print a single space
         for (let col1 = 0; col1 < totalRows - row; col1++) {
@@ -67,7 +69,7 @@ So for each row (which goes on increasing starting from zero), I am printing (to
 C> Column-2's printing output goes on **increasing** - Handle it by doing col2 <= (( 2 * row) + 1)
  So for each row, I am printing that many number of col2's output.
 
-D> For first line, i.e. for first loop >> print col-1's output 5 times and col-2's output 1 time.
+D> For first line, i.e. for first loop >> print col-1's output 5 times (because (totalRows - row is 5)) and col-2's output 1 time.
 ( (2 * 0 ) + 1 ) times
 
 E> For second line - i.e. for second loop >> print col-1's output 4 times and col-2's output 5 times.
@@ -87,7 +89,7 @@ printPyramid = totalRows => {
 
         }
 
-        for (let col2 = 1; col2 <= (( 2 * row) + 1); col2++ ) {
+        for (let col2 = 0; col2 <= (( 2 * row) + 1); col2++ ) {
 
               line = line + "*"
         }
