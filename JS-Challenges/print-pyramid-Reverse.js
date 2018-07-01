@@ -88,10 +88,10 @@ printPyramid = totalRows => {
 
         for ( let col1 = totalRows; col1 >= row ; col1--) {
 
-            line = line + '$'
+            line = line + ' '
         }
 
-        for (let col2 = ((2 * row) - 1); col2 > 0; col2-- ) {
+        for (let col2 = ((2 * row) - 1); col2 > 0 ; col2-- ) {
 
             line = line + "*"
         }
