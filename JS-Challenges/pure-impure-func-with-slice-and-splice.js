@@ -38,3 +38,10 @@ console.log(arr1);                    //=> [ 1, 2, 3, 4, 5 ]
 
 
 /* Slice and Splice do the same thing to the array but in a different way, slice returns a new array according to the input, guaranteeing the same output per input every time. Splice on the other hand modifies the original array and the same output per input is not guaranteed. */
+
+// Look at this, how splice() returns the deleted elements of the array, leaving the original array mutated.
+let myArr1 = [ 2, 1, 3, 4]
+
+console.log(myArr1.splice(1, 1));  // => [ 1 ]
+
+console.log(myArr1);  // => [ 2, 3, 4 ]
