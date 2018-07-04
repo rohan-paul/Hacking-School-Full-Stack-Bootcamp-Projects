@@ -1,0 +1,25 @@
+{
+  "name": "hacking-school-full-stack-bootcamp-assignments",
+  "version": "1.0.0",
+  "description": "![](https://raw.github.com/rohan-paul/Hacking-School-Full-Stack-Bootcamp-Assignments/master/THS.jpg)",
+  "main": "performance-2.js",
+  "dependencies": {
+    "angularfire2": "^5.0.0-rc.6",
+    "es6-promise": "^4.2.4",
+    "isomorphic-fetch": "^2.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rohan-paul/Hacking-School-Full-Stack-Bootcamp-Projects.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rohan-paul/Hacking-School-Full-Stack-Bootcamp-Projects/issues"
+  },
+  "homepage": "https://github.com/rohan-paul/Hacking-School-Full-Stack-Bootcamp-Projects#readme"
+}

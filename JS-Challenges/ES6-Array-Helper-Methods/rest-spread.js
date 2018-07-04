@@ -9,7 +9,7 @@ function printArguments (...theArguments) {
 	console.log(theArguments);
 }
 
-printArguments('hi', 'this', 'is', 'paul');
+printArguments('hi', 'this', 'is', 'paul');  // => [ 'hi', 'this', 'is', 'paul' ]
 
 
 // Example - 2 - spreading object
@@ -24,7 +24,7 @@ let newObj = {
 	key3: 'value3'
 }
 
-console.log(newObj);
+console.log(newObj);    // => { key1: 'value1', key2: 'value2', key3: 'value3' }
 
 // Example - 3  - Spreading Array
 
@@ -34,15 +34,15 @@ const spreadableOne = [1, 2, 3, 4];
 const spreadableTwo = [5, 6, 7, 8];
 
 const combinedArr = [...spreadableOne, ...spreadableTwo]
-console.log(combinedArr);
+console.log(combinedArr);  // => [ 1, 2, 3, 4, 5, 6, 7, 8 ]
 
-// Remove an array element without mutating the original array. From the below arrray remove 'salmon' and return the array
+// Remove an array element without mutating the original array. From the below arrray remove 'salmon' and return the array - Great example, without using splice(), as splice() will mutate the original array
 
 const animals = ['squirrel', 'bear', 'deer', 'salmon', 'rat'];
 
 const newArr = [...animals.slice(0, 3), ...animals.slice(4)];
 
-console.log(newArr);
+console.log(newArr); // [ 'squirrel', 'bear', 'deer', 'rat' ]
 
 
 

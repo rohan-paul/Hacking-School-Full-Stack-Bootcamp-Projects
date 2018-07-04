@@ -19,7 +19,7 @@ function foo ( [x, y] ) {
 
 // foo([1,2]);  // -> 1 2
 // foo([2]);    // -> 2 undefined
-// foo([])      // -> usndefined undefined
+// foo([])      // -> undefined undefined
 
 
 // Examples of Object destructuring for parameters in function declaration:

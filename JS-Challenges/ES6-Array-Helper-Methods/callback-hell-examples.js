@@ -1,15 +1,15 @@
 
 setTimeout((changeMaker) => {
-    let list = changeMaker + ',';
+    let list = changeMaker + ', ';
 
     setTimeout((changeMaker) => {
-        list += changeMaker + ',';
+        list += changeMaker + ', ';
 
         setTimeout((changeMaker) => {
-            list += changeMaker + ',';
+            list += changeMaker + ', ';
 
             setTimeout((changeMaker) => {
-                list += changeMaker + ',';
+                list += changeMaker + ', ';
 
                 setTimeout((changeMaker) => {
                     list += changeMaker

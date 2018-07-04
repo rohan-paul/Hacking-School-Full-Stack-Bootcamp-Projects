@@ -7,6 +7,9 @@ Input Variable : Number of rows
 # # # # #
 # # # # # #
 # # # # # # #
+
+PROBLEM STATEMENT SPECIAL REQUIREMENT - Observe that its base and height are both equal to N ( i.e. the argument to the function, which is equal to the number of rows)
+
 */
 
 function printTriangle(rows) {
@@ -22,7 +25,7 @@ function printTriangle(rows) {
 	}
 }
 
-// printTriangle(7);
+printTriangle(7);
 
 /*Explanation
 A) The target is to print # on line-1 >> then print # # in line line 2 and so on.
@@ -40,7 +43,7 @@ E) After printing, reset char, so for the next line it can print again.
 function printTriangle_alt(rows) {
 	for (let row = 1; row <= rows; row++) {
 		console.log("#".repeat(row));
-	}	
+	}
 }
 
-printTriangle_alt(5);
+// printTriangle_alt(5);

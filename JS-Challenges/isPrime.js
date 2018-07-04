@@ -19,6 +19,7 @@ isPrime1 = num => {
 // Decrease complexity of algorithm from O(n) to O(sqrt(n)) by running the loop until square root of number
 
 // Cool version with code-golfing. Create array on the fly
+
 const isPrime_cool = n => ![...Array(n).keys()].slice(2).map(i => (n % i)).includes(false) && ![0, 1].includes(n)
 
 /* Explanation -
@@ -44,4 +45,4 @@ F> ![0, 1].includes(n)  => Means if n is either 0 or 1 return false. That is the
 
 */
 
-console.log(isPrime_cool(19));
+console.log(isPrime_cool(19));  // => true
