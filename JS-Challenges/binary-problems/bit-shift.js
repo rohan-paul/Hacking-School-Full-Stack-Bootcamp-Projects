@@ -1,12 +1,12 @@
-/* THEORY OF BIT SHIFT - A bit shift moves each digit in a number's binary representation left or right. The last bit in the direction of the shift is lost, and a 00 bit is inserted on the other end.
+/* THEORY OF BIT SHIFT - A bit shift moves each digit in a number's binary representation left or right. The last bit in the direction of the shift is lost, and a 0 bit is inserted on the other end.
 
   0010 << 1  →  0100
-1011 >> 1  →  0101
+  1011 >> 1  →  0101
 
 Bit shifts take number of times to shift as the right argument:
 
   1010110 << 2  →  1011000
-    1011010 >> 3  →  0001011
+  1011010 >> 3  →  0001011
 
 A single left shift multiplies a binary number by 2:
 
@@ -35,7 +35,13 @@ For example for the number 6 if I have to left-shift 2 bits, the following algeb
     }
     console.log(isLeftShift(6, 5));
 
-/* Problems statement - Write a function to check validity of the below identity ( x >> y = x/(2^y) ) for right shifting of bits. The function should return true/false.
+/* Problems statement - Write a function to check validity of the below identity
+
+ ( x >> y = x/(2^y) ) 
+
+for right shifting of bits. Meaning if I want to divide x by 2 I just do a single right shift x >> 1
+
+The function should return true/false.
 For example for the number 6 if I have to right-shift 2 bits, the following algebra will hold true.  (6 >> i = 6 / 2^i) and Deriving the General Formula.
  */
 function isRightShift (num, shiftNum) {
