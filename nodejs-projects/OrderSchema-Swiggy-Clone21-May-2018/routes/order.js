@@ -18,7 +18,7 @@ var app = express();
 router.get('/orders', (req, res) => {
     Order.find ({}, function(err, listOfOrders) {
         if(err) throw err;
-        res.json(listOfOrders);
+        res.json(listOfOrders);        
     });
 });
 
@@ -82,7 +82,8 @@ router.delete('/orders/:id', function(req, res) {
     });
 });
 
-//For multer It's very crucial that the file name in upload.single() matches the name attribute in my index.html. When an image is received by the route, it will be automatically saved by multer to the directory you previously specified. The upload.single call is handled by the multer middleware.
+//For multer It's very crucial that the file name in upload.single() matches the name attribute in my index.html. When an image is received by the route, it will be automatically saved by multer to the directory I previously specified. The upload.single call is handled by the multer middleware.
+
 router.post('/upload', upload.single('image'), function(req, res) {
     if (!req.file) {
         console.log('No files received');

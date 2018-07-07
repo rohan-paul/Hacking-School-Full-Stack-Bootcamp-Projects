@@ -1,11 +1,13 @@
 //Destructuring Example-1
-/* Destructuring can also be used for passing objects into a function, allowing you to pull specific properties out of an object in a concise manner. It is also possible to assign default values to destructured arguments, which can be a useful pattern if passing in a configuration object. */
+/*  Destructuring allows us to extract data from arrays and objects into separate variables.
+
+estructuring can also be used for passing objects into a function, allowing you to pull specific properties out of an object in a concise manner. It is also possible to assign default values to destructured arguments, which can be a useful pattern if passing in a configuration object. */
 
 let jane = { firstName: 'Jane', lastName: 'Doe'};
 let john = { firstName: 'John', lastName: 'Doe', middleName: 'Smith' }
 
 // the below pattern that I always use in React
-let sayName = ({firstName, lastName, middleName= "N/A"}) => {
+let sayName = ({firstName, lastName, middleName = "N/A"}) => {
     console.log(`Hello ${firstName} ${lastName} ${middleName}`);
 }
 
@@ -35,3 +37,13 @@ foo({y: 1})  // -> undefined 1
 foo({})  // -> undefined undefined
 
 /* This technique is an approximation of named arguments, in that the properties on the object map to the destructured parameters of the same names. That also means that we get optional parameters (in any position) for free, as you can see leaving off the x "parameter" worked as we'd expect. */
+
+
+//Destructuring Example-2
+
+let full_name =['John','Deo'];
+
+let [first_name,last_name]=full_name;
+
+console.log(first_name,last_name);
+// outputs John Deo

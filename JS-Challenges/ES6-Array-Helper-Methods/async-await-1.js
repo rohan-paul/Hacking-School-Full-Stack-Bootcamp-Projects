@@ -21,6 +21,8 @@ getJSON = () => {
   })
 }
 
+getJSON()  // Will fetch and then print "Successively fetched"
+
 /* REMEMBER THE FETCH SYNTAX
 
 fetch(url) // Call the fetch function passing the url of the API as a parameter
@@ -32,9 +34,6 @@ fetch(url) // Call the fetch function passing the url of the API as a parameter
 });
 
 */
-
-// getJSON()  // Will fetch and then print "Successively fetched"
-
 
 
 // APPROACH-2 With async-await

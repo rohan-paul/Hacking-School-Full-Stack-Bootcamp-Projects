@@ -1,7 +1,5 @@
-/* Application of spread operator
-*/
+// Application of spread operator - 1
 
-//Lets assume we have been given the team data in the below format
 
 const team = {
     name: 'Liberty',
@@ -21,6 +19,7 @@ const printTeam = (teamName, coach, firstPlayer, secondPlayer) => {
 
 printTeam(team.name, team.coach, ...team.players);
 //Will output the below.
+
 // Team: Liberty
 // Coach: David
 // Marge Aiden
@@ -33,3 +32,55 @@ const printTeamRest = (teamName, coach, ...players) => {
 
 }
 printTeamRest(team.name, team.coach, ...team.players);
+
+/* Application -2 The spread operator allows an expression to be expanded in places where multiple arguments (for function calls) or multiple elements (for array literals) or multiple variables (for destructuring assignment) are expected.*/
+
+// for Arrays
+const fruits = ['apple', 'banana'];
+const veggies = ['cucumber', 'potato'];
+
+const food = ['grapes', ...fruits, ...veggies];
+// -> ["grapes", "apple", "banana", "cucumber", "potato"]
+
+const [fav, ...others] = food;
+console.log(fav); // => grapes
+console.log(others); // => [ 'apple', 'banana', 'cucumber', 'potato' ]
+
+// For function calls
+const foodsToEat = ['grapes', 'apple', 'banana', 'cucumber', 'potato'];
+
+function eat () {
+	console.log(...arguments);
+}
+
+eat(...foodsToEat);  // => grapes apple banana cucumber potato
+
+// For objects - extracting and concatinating an object with spread operator to a new object, note, how I assigne new key-value pairs while creating a new object, and also concatinating with an existing object
+
+const member = {
+  name: 'Ben',
+  title: 'software developer',
+  skills: ['javascrip:t', 'react', 'redux'],
+};
+
+const newMemberObj = {
+	...member,
+	prevProj: [ 'A', 'B']
+}
+
+console.log(newMemberObj);
+
+/*Will output the below crating the new object like so -
+
+{ name: 'Ben',
+  title: 'software developer',
+  skills: [ 'javascrip:t', 'react', 'redux' ],
+  prevProj: [ 'A', 'B' ] }
+
+ */
+
+console.log(newMemberObj.name);  // => Ben
+
+// So while I was creating 'newMemberObj' above, behind the scene what exactly happened is the below code of 
+// const newMemberObj = Object.assign(member, {prevProj: [ 'A', 'B']})
+
