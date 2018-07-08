@@ -33,9 +33,9 @@ function matrixAddition1 (arr1, arr2) {
 }
 // console.log(matrixAddition1([ [1, 2, 3], [3, 2, 1], [1, 1, 1] ], [ [2, 2, 1], [3, 2, 3], [1, 1, 3] ] ));
 
-/* [ [1, 2, 3]
-     [3, 2, 1]
-     [1, 1, 1]
+  /*[ [1, 2, 3]
+      [3, 2, 1]
+      [1, 1, 1]
     ],
 
     [ [2, 2, 1]
@@ -91,7 +91,7 @@ C> We can use index1 to reference the corresponding inner array on 2dArray arr2 
 */
 
 // The most concise mechanism using .map function - And this is the best practice
-function matrixAddition4 (arr1, arr2) {
+matrixAddition4 = (arr1, arr2) => {
   return arr1.map((n, i) => {
     return n.map((o, j) => {
       console.log(o);

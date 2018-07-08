@@ -2,13 +2,18 @@
 
 The math of matrix multiplication - https://www.mathsisfun.com/algebra/matrix-multiplying.html
 To multiply a matrix by another matrix we need to do the "dot product" of rows and columns .
-m1 = [1 , 2 , 3], [4 , 5, 6 ]
-m2 = [7, 8], [9, 10], [11, 12]
+m1 = [ [1 , 2 , 3], [4 , 5, 6 ] ]
+
+m2 = [ [7, 8], [9, 10], [11, 12] ]
 
 The "Dot Product" is where we multiply matching members, then sum up:
 
 1st row and 1st column>>
 (1, 2, 3) • (7, 9, 11) = 1×7 + 2×9 + 3×11  = 58
+
+The above in i, j, k notation -
+
+( m1[0][0] * m2[0][0] ) + ( m1[0][1] * m2[1][0] ) + ( m1[0][2] * m2[2][0] )
 
 1st row and 2nd column >>
 (1, 2, 3) • (8, 10, 12) = 1×8 + 2×10 + 3×12 = 64
@@ -27,8 +32,11 @@ For the pictorial representation see - https://www.intmath.com/matrices-determin
 //Alternative-1
 /* i to represent each element of m1, which itself is an array.
  j to represent actual numerical values of the first element of m2, noting first element m2 is an array.
+
+ k is the length of the first element (which is an array ) of m1
  */
-function multiplyMatrices(m1, m2) {
+
+ multiplyMatrices = (m1, m2) => {
 
   // First check if the given arguments are 2 dimensional arrays
  /*  if (!Array.isArray(m1) || !Array.isArray(m2) || !m1.length || !m2.length) {
@@ -54,9 +62,15 @@ function multiplyMatrices(m1, m2) {
 return result;
 }
 
+var m1 = [[1 , 2 , 3], [4, 5, 6]];
+var m2 = [[7, 8], [9, 10], [11, 12]];
+
+console.log(multiplyMatrices(m1, m2));  // =>  [ [ 58, 64 ], [ 139, 154 ] ]
+
 // Alternative-2
 /* A> Here with reduce() method, I am executing the function ( return sum + (elm * B[k][j]) ) on each element of the array from left to right, reducing the array to a single value. And the initial-value to the reduce() method is set to be at 0  */
-/* function multiplyMatrices (A, B) {
+
+function multiplyMatrices2 (A, B) {
   var result = new Array(A.length).fill(0).map(row => new Array(B[0].length).fill(0));
 
   return result.map((row, i) => {
@@ -64,9 +78,9 @@ return result;
           return A[i].reduce((sum, elm, k) => sum + (elm*B[k][j]) ,0)
       })
   })
-} */
+}
 
-var m1 = [[1 , 2 , 3], [4, 5, 6]];
-var m2 = [[7, 8], [9, 10], [11, 12]];
+// var m1 = [[1 , 2 , 3], [4, 5, 6]];
+// var m2 = [[7, 8], [9, 10], [11, 12]];
 
-console.log(multiplyMatrices(m1, m2));;
+console.log(multiplyMatrices2(m1, m2));   // =>  [ [ 58, 64 ], [ 139, 154 ] ]

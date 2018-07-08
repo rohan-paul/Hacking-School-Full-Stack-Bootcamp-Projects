@@ -58,6 +58,9 @@ getJSONAsync()  // Will fetch and then print "Fetched with async"
 
 In effect, the code pauses execution on those lines, where I have put await until the Promises resolve! Asynchronous programming becomes synchronous!
 
+When placed in front of a Promise call, await forces the rest of the code to wait until that Promise finishes and returns a result.
+Await works only with Promises, it does not work with callbacks.
+
 REMEMBER THE async-await syntax works like this -
 
 Async arrow functions look like this:
