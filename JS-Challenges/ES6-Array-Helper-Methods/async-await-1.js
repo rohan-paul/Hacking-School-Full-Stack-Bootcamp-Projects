@@ -23,6 +23,9 @@ getJSON = () => {
 
 getJSON()  // Will fetch and then print "Successively fetched"
 
+/* EXPLANATION OF THE ABOVE -  The Fetch API provides an interface for making network requests, returning Promises for us to resolve. To use it to get the data, I chain together a single .then callback. The callback receives the Response object and return back its JSON data. And then console.logs it.
+*/
+
 /* REMEMBER THE FETCH SYNTAX
 
 fetch(url) // Call the fetch function passing the url of the API as a parameter
@@ -51,10 +54,18 @@ const getJSONAsync = async () => {
 
 getJSONAsync()  // Will fetch and then print "Fetched with async"
 
-/* REMEMBER THE async-await syntax works like this -
+/* The await expression causes async function execution to pause until a Promise is resolved, that is fulfilled or rejected, and to resume execution of the async function after fulfillment. When resumed, the value of the await expression is that of the fulfilled Promise.
+
+In effect, the code pauses execution on those lines, where I have put await until the Promises resolve! Asynchronous programming becomes synchronous!
+
+REMEMBER THE async-await syntax works like this -
 
 Async arrow functions look like this:
 
 const foo = async () => {
   // do something
-} */
+}
+
+Other than the syntax used, both functions are completely identical - they both return Promises and resolve with the JSON response from fetch().
+
+*/
