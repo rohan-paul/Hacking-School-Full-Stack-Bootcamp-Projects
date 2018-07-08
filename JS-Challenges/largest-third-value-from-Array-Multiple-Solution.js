@@ -1,5 +1,4 @@
-/* https://www.geeksforgeeks.org/third-largest-element-array-distinct-elements/
-
+/*
 SOLUTION-1 - Quite optimum solution - 1> In this method, we can find third largest in one traversal only.. Without using an extra step of sorting the whole array
 
 Initialize first, second and second = -INF
@@ -21,12 +20,13 @@ thirdLargestElem = arr => {
   for (let i of arr) {
 
     if (first < i) {
+      third = second;
       second = first;
       first = i;
-    } else if (second < i && first !== i) {
+    } else if (second < i ) {
       third = second;
       second = i;
-    } else if (third < i && second !== i) {
+    } else if (third < i ) {
       third = i
     }
   }
@@ -36,5 +36,39 @@ thirdLargestElem = arr => {
 let myArr = [1, 14, 2, 16, 10, 20]
 let myArr2 = [19, -10, 20, 14, 2, 16, 10]
 
-console.log(thirdLargestElem(myArr)); // => 10
+console.log(thirdLargestElem(myArr)); // => 14
 console.log(thirdLargestElem(myArr2));  // => 16
+
+/* SOLUTION-2 - ALMOST LIKE ABOVE, BUT MORE GENERIC AND SIMPLE - Only differene is A) I am initializing 'first' with arr[0] (instead of -INFINITY) and B) traversing the array from i = 1 (instead of i = 0)
+https://www.geeksforgeeks.org/third-largest-element-array-distinct-elements/
+
+
+*/
+
+thirdLargestElem2 = arr => {
+
+  let first = arr[0], second = -Infinity, third = -Infinity;
+
+  for (let i = 1; i < arr.length; i++) {
+
+    if (first < arr[i] ) {
+      third = second;
+      second = first;
+      first = arr[i]
+    }
+    // If arr[i] is in between first and second. And this if can only hit if the first if is NOT hit
+    else if (second < arr[i]) {
+      third = second;
+      second = arr[i];
+    }
+    // if arr[i] is in between second and third. Agaiin, this if can only hit if the first 2 ifs are NOT hit
+    else if (third < arr[i]) {
+      third = arr[i]
+    }
+  }
+  return third;
+}
+
+
+console.log(thirdLargestElem2(myArr)); // => 14
+console.log(thirdLargestElem2(myArr2));  // => 16
