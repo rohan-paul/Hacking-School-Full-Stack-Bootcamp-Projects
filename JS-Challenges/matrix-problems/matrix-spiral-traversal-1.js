@@ -52,7 +52,7 @@ printClockWiseSpiral = (inputMatrix, resultArr) => {
   })
   resultArr = resultArr.concat(arrayWithLeftEnd.reverse());
 
-  // Now I have completed one full run over the the initial given Matrix. And completely fresh new inner-matrix is stating from here on. So apply recursion. Note, that all the above code, I have modified inputMatrix and also resultArr need to be further built with next exectiion stack of the recursive call.
+  // Now I have completed one full run over the the initial given Matrix. And completely fresh new inner-matrix is stating from here on. So apply recursion. Note, that all the above code, I have modified inputMatrix and also resultArr need to be further built with next execution stack of the recursive call.
 
   return printClockWiseSpiral(inputMatrix, resultArr)
 }
