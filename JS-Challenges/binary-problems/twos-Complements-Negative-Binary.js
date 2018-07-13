@@ -33,3 +33,33 @@ For a positive number n,
 
 */
 
+decimal2_twosComplement = (num, bitCount) => {
+
+  let finalBinaryStr;
+
+  // Helper function to return an array with specified length. But, the first argument 'str' will fill the last indexes. And all the rest of the indexes will be filled by the second argument 'fillingChar'. And then with slice() I will extract only the specifice no of characters starting from end
+
+  fill_AndCropFromRightEnd = (str, fillingChar, len) => {
+    return (Array(len).fill(fillingChar).join('') + str).slice(len * -1)
+  }
+
+  // If the given number is positive decimal, then just convert the decimal to binary and then pad with 0's for the last 32 bits. That is, starting from right-end crop the result upto 32 bits
+
+  if (num >= 0) {
+
+    let twosComp = num.toString(2);
+    finalBinaryStr = fill_AndCropFromRightEnd(twosComp, '0', (bitCount || twosComp.length))
+
+  } else {
+
+    finalBinaryStr = (Math.pow(2, bitCount) + num).toString(2);
+
+    if (Number(finalBinaryStr) < 0) {
+      return undefined
+    }
+  }
+  return finalBinaryStr;
+
+}
+
+console.log(decimal2_twosComplement(5, 32));
