@@ -16,14 +16,24 @@ getBinaryComplementFromDecimal = num => {
   	// console.log(i);
     complement = complement + ((binary[i] === "1") ? 0 : 1)
   }
+
   return complement;
 }
 
-console.log(getBinaryComplementFromDecimal(5));   // => 101
+console.log(getBinaryComplementFromDecimal(5));   // => 010
 
-console.log(getBinaryComplementFromDecimal(37));   // => 011010
+// console.log(getBinaryComplementFromDecimal(37));   // => 011010
 
-/*WARNING AND GREAT POINT - Here, I can NOT use for...of syntax - because, with for...of 'i' will NOT take the index value, instead it will be the actual item value of that position, which will be either 0 or 1. So, binary[i] will NEVER PROGRESS BEYOND THE FIRST 2 INDEX POSITIONS IN THE STRING ( binary[0] or binary[i])
+/* If the above question asked for - Given a positive integer, output its complement number. The complement strategy is to flip the bits of its binary representation.
+
+the just replace the return statement with the below
+
+return parseInt(complement, 2);
+
+*/
+
+
+/* GREAT POINT - Here, I can NOT use for...of syntax - because, with for...of 'i' will NOT take the index value, instead it will be the actual item value of that position, which will be either 0 or 1. So, binary[i] will NEVER PROGRESS BEYOND THE FIRST 2 INDEX POSITIONS IN THE STRING ( binary[0] or binary[i])
 
 So, in the above, if I want to use for...of syntax, inside the loop I have to do
 
@@ -45,7 +55,21 @@ The for...of statement iterates over data that iterable object defines to be ite
 2’s complement of a binary number is 1 added to the 1’s complement of the binary number.
 Examples:
 
+Examples:
+
 Let numbers be stored using 4 bits
 
+1's complement of 7 (0111) is 8 (1000)
+1's complement of 12 (1100) is 3 (0011)
+
+So,
+
 2's complement of 7 (0111) is 9 (1001)
-2's complement of 12 (1100) is 4 (0100) */
+2's complement of 12 (1100) is 4 (0100)
+
+Theory http://disq.us/p/1raf82j
+
+Basically, (r-1)'s complement of a number in radix 'r' = number obtained by subtracting every digit from (r-1) . r's complement = (r-1)'s complement + 1
+
+
+*/

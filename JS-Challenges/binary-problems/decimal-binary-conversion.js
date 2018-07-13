@@ -9,7 +9,7 @@ function decimalToBinary (decNum) {
     return bitsArray.reverse().join('');
   }
 
-console.log(decimalToBinary(21));
+// console.log(decimalToBinary(21));
 
 // Converting Decimal to Binary - Alternative-2
 function decimalToBinStr (decNum) {
@@ -38,11 +38,3 @@ function decToBinRecursive(num){
   */
 
   // console.log(decToBinRecursive(21)); // Will output 10101
-
-  function signedBinary (decimalNum) {
-    // let binary = decimalNum.toString(2);
-    return decimalNum.toString(2);
-    // return ((binary.substr(0,1) === '1' ? '-':'+')) + binary;
-  }
-
-  // console.log(signedBinary(-8));
