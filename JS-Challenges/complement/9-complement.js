@@ -26,7 +26,7 @@ nineComplementSum = num => {
   for (let i in numStrArr) {
     nineComplementNum.push(9 - parseInt(numStrArr[i]) );
   }
-  // noet, the for...in syntax will take the incex value of 0, 1, 2... for 'i'
+  // note, the for...in syntax will take the incex value of 0, 1, 2... for 'i'
 
   return nineComplementNum.reduce((accum, currentItem) => {
     return accum + currentItem;

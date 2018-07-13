@@ -1,0 +1,5 @@
+A> http://disq.us/p/1raf82j
+
+Basically, (r-1)'s complement of a number in radix 'r' = number obtained by subtracting every digit from (r-1) . r's complement = (r-1)'s complement + 1
+
+B>

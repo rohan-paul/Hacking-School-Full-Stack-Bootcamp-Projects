@@ -1,0 +1,34 @@
+http://www.binarymath.info/binary-addition.phpBinary addition calculations work in the same way, except that only 0's and 1's can be used, instead of the whole spectrum of 0-9. This actually makes binary addition much simpler than decimal addition, as we only need to remember the following:
+
+0 + 0 = 0
+0 + 1 = 1
+1 + 0 = 1
+1 + 1 = 10
+
+As an example of binary addition we have,
+
+  101
+ +101
+
+a) To add these two numbers, we first consider the "ones" column and calculate 1 + 1, which (in binary) results in 10. We "carry" the 1 to the "tens" column, and the leave the 0 in the "ones" column.
+
+b) Moving on to the "tens" column, we calculate 1 + (0 + 0), which gives 1. Nothing "carries" to the "hundreds" column, and we leave the 1 in the "tens" column.
+
+c) Moving on to the "hundreds" column, we calculate 1 + 1, which gives 10. We "carry" the 1 to the "thousands" column, leaving the 0 in the "hundreds" column.
+
+  101
+ +101
+ ====
+ 1010
+
+Another example of binary addition:
+
+  1011
+ +1011
+ ======
+ 10110
+
+Note that in the "tens" column, we have 1 + (1 + 1), where the first 1 is "carried" from the "ones" column. Recall that in binary,
+
+1 + 1 + 1 = 10 + 1
+                  = 11

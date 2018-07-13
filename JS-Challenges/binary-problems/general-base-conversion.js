@@ -23,7 +23,8 @@ An integer number parsed from the given string. If the first character cannot be
 
 
 
-B> Number.prototype.toString() -
+B> Number.prototype.toString() - This method returns a string representing the specified object. The toString() method parses its first argument, and attempts to return a string representation in the specified radix (base).
+
 Syntax  >> numObj.toString([radix])
 
 radix is Optional, which is an integer in the range 2 through 36 specifying the base to use for representing numeric values.
@@ -32,9 +33,7 @@ Return value - A string representing the specified Number object.
 */
 
 // Decimal to binary
-ConvertAnyBase.dec2bin = num => {
-  return ConvertAnyBase(num).from(10).to(2);
-};
+ConvertAnyBase.dec2bin = num => ConvertAnyBase(num).from(10).to(2);
 
 // console.log(ConvertAnyBase.dec2bin(37)); // 100101
 
@@ -52,18 +51,6 @@ ConvertAnyBase.dec2hex = num => {
 
 // console.log(ConvertAnyBase.dec2hex('2')); // '2a'
 
-//***********MORE COMPACT VERSION****************** */
-
-// Below I am returning the second nested function with argument 'num' from the first outer function with argument (baseFrom, baseTo)
-const Convert = (baseFrom, baseTo) => num => {
-  return parseInt(num, baseFrom).toString(baseTo);
-}
-
-const decimal2Bin = Convert(10, 2);
-const binary2Dec = Convert(2, 10)
-
-// console.log(decimal2Bin(37));
-// console.log(binary2Dec(100101));
 
 //***********ANOTHER COMPACT VERSION****************** */
 

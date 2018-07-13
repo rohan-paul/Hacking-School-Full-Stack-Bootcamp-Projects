@@ -1,7 +1,6 @@
 // Print a given matrix in spiral form - Pretty much the same steps, like the other file, only here, I will be using splice() instead of shift() and pop()
 
 // helper function to deal with all the elements on the right layer of the spiral / Matrix.
-
 topAndRightSpiral = matrix => {
 
   // Take out the first row from inputMatrix and push to result
@@ -17,7 +16,6 @@ topAndRightSpiral = matrix => {
 }
 
 // helper function to deal with all the elements on the bottom layer and the left column of the spiral / Matrix.
-
 bottomAndLeftSpiral = matrix => {
 
   // Now from the last row push the elements in reverse order. But unlike my other solution here, I am using splice() which returns the deleted element as an array. So, if only one single element is deleted, then a single-element array will be returned from the function. Hence, I have to use [0] to extract the elements from the array and only then, I can reverse it.
