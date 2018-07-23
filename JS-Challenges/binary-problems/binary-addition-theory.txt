@@ -30,5 +30,4 @@ Another example of binary addition:
 
 Note that in the "tens" column, we have 1 + (1 + 1), where the first 1 is "carried" from the "ones" column. Recall that in binary,
 
-1 + 1 + 1 = 10 + 1
-                  = 11
+1 + 1 + 1 = 10 + 1 = 11

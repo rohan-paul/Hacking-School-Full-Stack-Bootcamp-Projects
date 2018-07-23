@@ -37,7 +37,7 @@ decimal2_twosComplement = (num, bitCount) => {
 
   let finalBinaryStr;
 
-  // Helper function to return an array with specified length. But, the first argument 'str' will fill the last indexes. And all the rest of the indexes will be filled by the second argument 'fillingChar'. And then with slice() I will extract only the specifice no of characters starting from end
+  // Helper function to return an array with specified length. But, the first argument 'str' will fill the last indexes. And all the rest of the indexes will be filled by the second argument 'fillingChar'. And then with slice() I will extract only the specified no of characters starting from end, which in my case will be 32
 
   fill_AndCropFromRightEnd = (str, fillingChar, len) => {
     return (Array(len).fill(fillingChar).join('') + str).slice(len * -1)
@@ -51,7 +51,7 @@ decimal2_twosComplement = (num, bitCount) => {
     finalBinaryStr = fill_AndCropFromRightEnd(twosComp, '0', (bitCount || twosComp.length))
 
   } else {
-
+    // Keep a note of this formulae
     finalBinaryStr = (Math.pow(2, bitCount) + num).toString(2);
 
     if (Number(finalBinaryStr) < 0) {
@@ -63,3 +63,20 @@ decimal2_twosComplement = (num, bitCount) => {
 }
 
 console.log(decimal2_twosComplement(5, 32));
+
+/* EXPLANATION ON THE FORMULAE - finalBinaryStr = (Math.pow(2, bitCount) + num).toString(2);
+
+A> https://stackoverflow.com/questions/15463491/how-to-represent-a-negative-number-with-a-fraction-in-2s-complement
+
+With decimal number systems, each number position (or column) represents (reading a number from right to left): units (which is 10^0), tens (i.e. 10^1),hundreds (i.e. 10^2), etc.
+
+With unsigned binary numbers, the base is 2, thus each position becomes (again, reading from right to left): 1 (i.e. 2^0) ,2 (i.e. 2^1), 4 (i.e. 2^2), etc.
+
+For example
+
+2^2 (4), 2^1 (2), 2^0 (1).
+In signed twos-complement the most significant bit (MSB) becomes negative. Therefore it represent the number sign: '1' for a negative number and '0' for a positive number.
+
+B>
+
+*/
