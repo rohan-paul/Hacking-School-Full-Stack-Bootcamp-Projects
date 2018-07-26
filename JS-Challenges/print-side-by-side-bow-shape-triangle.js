@@ -20,7 +20,7 @@
 **
 *
 
-Side by triangel bow shaped triangle
+Side by triangel bow shaped
 */
 
 bowShapedTriangle = maxNum  => {

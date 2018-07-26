@@ -30,10 +30,10 @@ getJSON()  // Will fetch and then print "Successively fetched"
 
 fetch(url) // Call the fetch function passing the url of the API as a parameter
 .then(function() {
-    // Your code for handling the data you get from the API
+    // code for handling the data I get from the API
 })
 .catch(function() {
-    // This is where you run code if the server returns any errors
+    // This is where I run code if the server returns any errors
 });
 
 */
