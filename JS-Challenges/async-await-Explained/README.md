@@ -13,14 +13,31 @@ async function asyncF() {
 }
 ```
 ## Async - declares an asynchronous function (async function someName(){...}).
+
 - Automatically transforms a regular function into a Promise.
 - When called async functions resolve with whatever is returned in their body.
 - Async functions enable the use of await.
 
-## Await - pauses the execution of async functions. (var result = await someAsyncCall();).
+## Await - pauses the execution of async functions. (var result = await someAsyncCall(); ).
+
 - When placed in front of a Promise call, await forces the rest of the code to wait until that Promise finishes and returns a result.
+- This will pause the async function and wait for the Promise to resolve prior to moving on.
 - Await works only with Promises, it does not work with callbacks.
 - Await can only be used inside async functions.
+
+## Thumb Rules
+
+- await blocks the code execution within the async function, of which it(await statement) is a part.
+
+- There can be multiple await statements within a single async function.
+
+- When using async await make sure to use try catch for error handling.
+
+- If my code contains blocking code it is better to make it an async function. By doing this I am making sure that somebody else can use your function asynchronously.
+
+- By making async functions out of blocking code, you are enabling the user who will call your function to decide on the level of asynhronicity he wants.
+
+- await only blocks the code execution within the async function. It only makes sure that next line is executed when the promise resolves. So if an asynchronous activity has already started then await will not have an effect on it.
 
 ## Significance of Await
 
@@ -42,40 +59,34 @@ async function f(){
 
 ## Error Handling
 
-In most previous examples, we assumed that the promises resolve successfully. Hence, await-ing on a promise returned a value. If a promise we await for fails, this will result in an exception within the async function. We can use standard try/catch to handle it:
+In most previous examples, we assumed that the promises resolve successfully. Hence, await-ing on a promise returned a value. If a promise we await for fails, this will result in an exception within the async function. We can use standard try/catch to handle it, we just need to wrap our await calls like this:
+
+
 
 ```
-async function f() {
+async function doSomethingAsync(){
     try {
-        const promiseResult = await Promise.reject('Error');
-    } catch (e){
-        console.log(e);
+        // This async call may fail.
+        let result = await someAsyncCall();
+    }
+    catch(error) {
+        // If it does we will catch the error here.
     }
 }
 ```
 
-If the async function does not handle an exception, whether it is caused by a rejected promise or another bug, it will return a rejected promise:
-
+**Async function without a try/catch block.**
 ```
-async function f() {
-    // Throws an exception
-    const promiseResult = await Promise.reject('Error');
+async function doSomethingAsync(){
+    // This async call may fail.
+    let result = await someAsyncCall();
+    return result;
 }
 
-// Will print "Error"
-f().
-    then(() => console.log('Success')).
-    catch(err => console.log(err))
-
-async function g() {
-    // Throws an error
-    throw "Error";
-}
-
-// This also will print "Error"
-g().
-    then(() => console.log('Success')).
-    catch(err => console.log(err))
-
+// We catch the error upon calling the function.
+doSomethingAsync().
+    .then(successHandler)
+    .catch(errorHandler);
 ```
-This gives us handy way to work with rejected promises via well the known exception handling mechanism.
+
+It's important to choose which method of error handling you prefer and stick to it. Using both try/catch and .catch() at the same time will most probably lead to problems.
