@@ -1,7 +1,7 @@
 //Destructuring Example-1
 /*  Destructuring allows us to extract data from arrays and objects into separate variables.
 
-estructuring can also be used for passing objects into a function, allowing you to pull specific properties out of an object in a concise manner. It is also possible to assign default values to destructured arguments, which can be a useful pattern if passing in a configuration object. */
+Destructuring can also be used for passing objects into a function, allowing you to pull specific properties out of an object in a concise manner. It is also possible to assign default values to destructured arguments, which can be a useful pattern if passing in a configuration object. */
 
 let jane = { firstName: 'Jane', lastName: 'Doe'};
 let john = { firstName: 'John', lastName: 'Doe', middleName: 'Smith' }
