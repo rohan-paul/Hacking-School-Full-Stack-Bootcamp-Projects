@@ -9,15 +9,24 @@ function reverseString(str) {
 // console.log(reverseString("hello"));
 
 
+// 2-nd Approach - Using Recursion.
 function reverseStringRecursive(str) {
-  if (str === "") {
-    return "";
-  } else {
-    return reverseStringRecursive(str.substr(1) + str.charAt(0));
-  }
+    if (str === "") {
+      return "";
+    } else {
+      return reverseStringRecursive(str.substr(1)) + str.charAt(0);
+   }
 }
-/*2-nd Approach - Using Recursion.
+
+
+// Shorter version of above
+rev = s => (!s) ? '' : rev(s.substr(1)) + s.charAt(0)
+
+console.log(rev("rohan")); // => nahor
+
+/*
 A> Per the standard mechanism of recursion, for the single line of code, where I am calling the same function, I will not have a single code to execute, but several nested calls that will stack up with each call. And the end of that line's execution, it will just return the top most nested call in the stack.
+
 B> With each recursive call the stack will build up as below..
 
 recursionStringReverse('hello')
@@ -28,7 +37,16 @@ recursionStringReverse('hello')
 (((('o') + 'l') + 'l' ) + 'e') + 'h')
 
 That's it, terminal case reached and the most highly nested call returns immediately, which is the last line above
+
+https://medium.com/@patelhemil/an-interview-question-how-many-ways-can-you-reverse-a-string-in-javascript-89e8d6f5fa1d - 
+
+This method is the best in space and time complexity. Also, using this method in the interview shows that you are a seasoned programmer. Also, mention to your interviewer that there is a risk involved in using recursion, since JavaScript currently doesn’t have tail optimization available, you will get stack overflow error if your string is more that few thousand characters.
+
+
 */
+
+
+
 //Alternative-3-Using temporary variable
 /* The substring() method extracts the characters in a string between "start" and "end", not including "end" itself. Start is position (i.e. index number) where to start the extraction. First character is at index 0 */
 
@@ -42,6 +60,10 @@ function reverseStr3(str) {
   return temp;
 }
 // console.log(reverseStr3("hello"));
+
+
+
+
 
 //Alternative-4 - Simply pushing the characters from the last position. So, I have to start from index position (str.length -1) i.e. the last index, and after all iteration reach to the first position i.e. index-no 0
 function reverseString4 (str) {
@@ -76,6 +98,10 @@ function reverseStringHalfIndex(str) {
 }
 
 // console.log(reverseStringHalfIndex("hello"));
+// 
+// 
+// 
+// 
 
 // Alternative-6 - Uses the new for-of syntax of ES6 which traveses through each element / char of an iterable object from index=0 to the last element / char
 function reverseString (str) {
@@ -88,12 +114,21 @@ function reverseString (str) {
 }
 // console.log(reverseString("Rohan"));
 
-// Alternative-6 - Uses the same above for-of syntax of ES6 which traveses through each element / char of an iterable object from index=0 to the last element / char, but with reduce, and the first accumulator passed to recuce () is an empty string ''
+
+
+
+
+// Alternative-7 - Uses the same above for-of syntax of ES6 which traveses through each element / char of an iterable object from index=0 to the last element / char, but with reduce, and the first accumulator passed to recuce () is an empty string ''
 
 function reverseStr(str) {
-  return str.split('').reduce ((accumulator, index) => {
-    return  index + accumulator;
+  return str.split('').reduce ((accumulator, currentElm) => {
+    return  currentElm + accumulator;
   }, '')
 }
 
 console.log(reverseStr("rohan"));
+
+// Improved version of alt-7 I dont need the split() at all 
+const reverseStr_Improved = s => [...s].reduce((a, c) => c + a)
+
+console.log(reverseStr_Improved("rohan"));
