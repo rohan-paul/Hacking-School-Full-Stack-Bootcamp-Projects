@@ -22,7 +22,7 @@ function reverseStringRecursive(str) {
 // Shorter version of above
 rev = s => (!s) ? '' : rev(s.substr(1)) + s.charAt(0)
 
-console.log(rev("rohan")); // => nahor
+console.log(rev("hellow world")); // => nahor
 
 /*
 A> Per the standard mechanism of recursion, for the single line of code, where I am calling the same function, I will not have a single code to execute, but several nested calls that will stack up with each call. And the end of that line's execution, it will just return the top most nested call in the stack.
