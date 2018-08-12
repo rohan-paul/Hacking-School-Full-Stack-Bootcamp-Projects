@@ -6,9 +6,9 @@ In general, fibonnaci(n) = fibonnaci(n - 2) + fibonnaci(n - 1). By definition, t
 In the below solution I am assuming, the series starts with zero. That is, fibonacci(0) should return 0, not 1. If however, I wanted the series to start from 1, I would put the first condtion as if (n < 2) { return 1 }
 So the final series will look like below (so the 10 th fibonacci is 55)
 
-n =	    0	1	2	3	4	5	6	7	8	9	10	11	12	13	14	...
+n-th Fib Num =	    0	1	2	3	4	5	6	7	8	9	10	11	12	13	14	...
 
-xn =	0	1	1	2	3	5	8	13	21	34	55	89	144	233	377	...
+Actual Fib Num =	0	1	1	2	3	5	8	13	21	34	55	89	144	233	377	...
 
 f(7) = F(6) + F(5);
 
@@ -78,21 +78,6 @@ function fibonacciIterative (num) {
 
 // console.log(fibonacciIterative(10));
 
-// Problem Statement-3 - Find the n-th fibonacci number iteratively (using ES6 destructuring) - EXACTLY SAME APPROACH AS ABOVE
-function fibonacciIterativeAlt (num) {
-    let [a, b] = [0, 1];
-
-    while (--num) {
-        [a, b] = [b, b + a ]
-    }
-    return b;
-}
-// console.log(fibonacciIterativeAlt(10));
-
-/* Explanation of the above -  The two numbers a and b are initialized as 1 and 0, and in every iteration of the loop (counting backwards from n to 0), a becomes the sum of the two numbers ( its current value and prrevious value of the series ) and the lower number b becomes the previous value of the higher number a. When n reaches 0, the lower of the two numbers is returned and, it resolves to the nth number in the Fibonacci sequence.
-
-Note, that the condition while (--num) is equivalent to while (num > 0) because as soon as --num becomes zero, i.e. "false" the while loop no more get executed
-*/
 
 /* Problem statement-4 - Return a full fibonacci series upto a specified positon (e.g. upto the 10th Fibonacci number in the Fibonacci series) as an array.  every number after the first two is the sum of the two preceding ones
 So the final series will look like below (so the 10 th fibonacci is 55)
@@ -174,9 +159,9 @@ for (let i = 2; i <= maxFibumber; i++) {
 // => 0 1 1 2 3 5 8 13 21 34 55
 
 
-/* Problem STATEMENT - heck if a given number is Fibonacci number
+/* Problem STATEMENT - check if a given number is Fibonacci number
 
-FORMULAE - A number is Fibonacci if and only if one or both of (5*n2 + 4) or (5*n2 – 4) is a perfect square
+FORMULAE - A number 'n' is Fibonacci if and only if one or both of (5*n2 + 4) or (5*n2 – 4) is a perfect square
 */
 
 function isPerfectSquare (num) {

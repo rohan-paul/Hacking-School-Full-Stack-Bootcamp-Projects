@@ -19,3 +19,5 @@ function Palindrome(str) {
   }
 
   console.log(Palindrome.prototype.isPalindrome("eye"));
+
+  console.log("eye".Palindrome.prototype.isPalindrome());

@@ -22,7 +22,7 @@ function reverseStringRecursive(str) {
 // Shorter version of above
 rev = s => (!s) ? '' : rev(s.substr(1)) + s.charAt(0)
 
-console.log(rev("hellow world")); // => nahor
+console.log(rev("hello")); // => olleh
 
 /*
 A> Per the standard mechanism of recursion, for the single line of code, where I am calling the same function, I will not have a single code to execute, but several nested calls that will stack up with each call. And the end of that line's execution, it will just return the top most nested call in the stack.
@@ -40,7 +40,7 @@ That's it, terminal case reached and the most highly nested call returns immedia
 
 https://medium.com/@patelhemil/an-interview-question-how-many-ways-can-you-reverse-a-string-in-javascript-89e8d6f5fa1d - 
 
-This method is the best in space and time complexity. Also, using this method in the interview shows that you are a seasoned programmer. Also, mention to your interviewer that there is a risk involved in using recursion, since JavaScript currently doesn’t have tail optimization available, you will get stack overflow error if your string is more that few thousand characters.
+This method is one of the best in space and time complexity. Also, using this method in the interview shows that you are a seasoned programmer. Also, mention to your interviewer that there is a risk involved in using recursion, since JavaScript currently doesn’t have tail optimization available, you will get stack overflow error if your string is more that few thousand characters.
 
 
 */

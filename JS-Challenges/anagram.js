@@ -15,9 +15,9 @@ function isAnagram (s1, s2) {
 isAnagram('abc', 'cGa')
 
 // single liner
-let isAnagram_alt = (s1, s2) => s1.replace(/[^\w]/, '').toLowerCase().split('').sort().join('') === s2.replace(/[^\w]/, '').toLowerCase().split('').sort().join('')
+isAnagram_1 = (s1, s2) => s1.replace(/[^\w]/, '').toLowerCase().split('').sort().join('') === s2.replace(/[^\w]/, '').toLowerCase().split('').sort().join('')
 
-// console.log(isAnagram_alt('abc', 'cBa'));
+// console.log(isAnagram_1('abc', 'cBa'));
 
 //withoug using buil-in methods
 
