@@ -1,6 +1,11 @@
 /* KEY POINT - The spread operator allows us to spread the value of an array (or any iterable) across zero or more arguments in a function or elements in an array (or any iterable). 
 
+SO WITH SPREAD THING 'UNPACKING ELEMENTS' - Allowes an iterable (array, string, object) to be expanded where more arguments / elements are expected. 
+
 The rest parameter allows us to pass an indefinite number of parameters to a function and access them in an array. So rest parameter is ONLY about when I am implementing argument passing mechanism in more compact way - Otherwise both take the same triple-dot (...) syntax 
+Rest parameters must be at the end or it does not work
+
+SO WITH REST THING 'PACKING ELEMENTS' - Collects multiple elements and condenses them into a single eleme.
 
 */
 
