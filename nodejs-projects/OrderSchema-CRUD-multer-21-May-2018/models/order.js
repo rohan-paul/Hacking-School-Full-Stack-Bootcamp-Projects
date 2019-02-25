@@ -4,28 +4,22 @@ const Schema = mongoose.Schema;
 
 let orderSchema = new Schema ({
     customerId: {
-        type: String,
-        required: true,
-        index: { unique: true }
+        type: Number
     },
     driverId: {
-        type: String,
-        required: true,
-        index: { unique: true }
+        type: Number
     },
     orderItems: {
         type: Array,
-        required: true,
         default: []
     },
     selectedRestaurant: {
-        type: String,
-        required: true
+        type: String
     },
     createdAt: {
         type: Date,
-        default: new Date,
-        required: true
+        default: new Date
+
       },
       updatedAt: {
         type: Date,

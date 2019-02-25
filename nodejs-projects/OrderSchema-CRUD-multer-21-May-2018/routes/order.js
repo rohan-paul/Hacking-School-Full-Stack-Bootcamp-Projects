@@ -18,7 +18,7 @@ var app = express();
 router.get('/orders', (req, res) => {
     Order.find ({}, function(err, listOfOrders) {
         if(err) throw err;
-        res.json(listOfOrders);        
+        res.json(listOfOrders);
     });
 });
 
@@ -82,7 +82,11 @@ router.delete('/orders/:id', function(req, res) {
     });
 });
 
-//For multer It's very crucial that the file name in upload.single() matches the name attribute in my index.html. When an image is received by the route, it will be automatically saved by multer to the directory I previously specified. The upload.single call is handled by the multer middleware.
+/*For multer It's very crucial that the file name in upload.single() matches the name attribute in my index.html. i.e. the part < name="image" >
+When an image is received by the route, it will be automatically saved by multer to the directory I previously specified. The upload.single call is handled by the multer middleware.
+
+https://github.com/expressjs/multer#usage - Multer adds a body object and a file or files object to the request object. The body object contains the values of the text fields of the form, the file or files object contains the files uploaded via the form. Thats why I can use req.file in the below
+*/
 
 router.post('/upload', upload.single('image'), function(req, res) {
     if (!req.file) {

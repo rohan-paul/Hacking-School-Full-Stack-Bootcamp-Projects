@@ -97,12 +97,6 @@ function reverseStringHalfIndex(str) {
   return strArr.join('');
 }
 
-// console.log(reverseStringHalfIndex("hello"));
-// 
-// 
-// 
-// 
-
 // Alternative-6 - Uses the new for-of syntax of ES6 which traveses through each element / char of an iterable object from index=0 to the last element / char
 function reverseString (str) {
   let reverse = "";
@@ -113,9 +107,6 @@ function reverseString (str) {
   return reverse;
 }
 // console.log(reverseString("Rohan"));
-
-
-
 
 
 // Alternative-7 - Uses the same above for-of syntax of ES6 which traveses through each element / char of an iterable object from index=0 to the last element / char, but with reduce, and the first accumulator passed to recuce () is an empty string ''
