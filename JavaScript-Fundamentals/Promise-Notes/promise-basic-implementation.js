@@ -12,7 +12,7 @@ promise1
     console.log("Hey this time rejected, but will hit again");
   });
 
-// The above Will output - "Hey this time rejected, but will hit again"
+// The above Will output - "Hey this time rejected, but will hit again" - Because I am only passing a reject function inside the Promise
 
 let promise2 = new Promise((resolve, reject) => {
   resolve();
