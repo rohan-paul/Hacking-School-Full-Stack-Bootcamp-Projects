@@ -13,7 +13,7 @@
     "hbs": "~4.0.1",
     "http-errors": "~1.6.2",
     "morgan": "~1.9.0",
-    "nodemailer": "^4.6.5",
+    "nodemailer": "^6.4.16",
     "nodemon": "^1.17.5"
   }
 }
